@@ -6,7 +6,7 @@ const SectionStyle = (props) => {
       .sectionContainer {
         height: 1100px;
         width: 100%;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.6);
         background-blend-mode: darken;
       }
     `}</style>

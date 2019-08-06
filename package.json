@@ -46,6 +46,11 @@
     ]
   },
   "devDependencies": {
-    "stylus": "^0.54.5"
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
+    "next-compose": "0.0.2",
+    "postcss-easy-import": "^3.0.0",
+    "stylus": "^0.54.5",
+    "tailwindcss": "^1.0.6"
   }
 }

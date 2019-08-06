@@ -12,8 +12,7 @@ const Section = (props) => {
       }}
       >      
       <Header/>
-      {props.children}
-      
+      {props.children}      
       <SectionStyle bgURL={props.imageURL}/>
     </div>
   )
