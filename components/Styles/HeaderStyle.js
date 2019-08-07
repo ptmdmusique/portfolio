@@ -4,7 +4,6 @@ const SectionStyle = (props) => {
   return (
     <style jsx="true" >{` 
       .headerContainer {
-        width: 100%;
         background-color: rgba(0,0,0,0.6);
 
         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -17,7 +16,6 @@ const SectionStyle = (props) => {
         src: url("../../assets/fonts/Potra.ttf")
       }
       .headerText {
-        align-text: center;
         font-family: "Arkhip"
       }
     `}</style>

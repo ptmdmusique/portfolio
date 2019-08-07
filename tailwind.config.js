@@ -6,6 +6,9 @@ module.exports = {
         'primary': '#ffffff',
         'secondary': '#000000',
         'danger': '#e3342f',
+      },
+      fontFamily: {
+        'serif': 'Arkhip'
       }
     }
   },

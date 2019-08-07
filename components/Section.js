@@ -1,17 +1,18 @@
 import React from 'react'
 import SectionStyle from './Styles/SectionStyle'
-import Header from '../components/Header';
+import '../tailwind.css';
 
 const Section = (props) => {
+  const containerCN = "sectionContainer w-full h-screen " + (props.additionalStyle || "")
+  
   return (
     <div 
-      className="sectionContainer"
+      className={containerCN}
       style={{ 
         backgroundImage: ("url(" + props.imageURL + ")"),
         backgroundSize: 'cover',
       }}
       >      
-      <Header/>
       {props.children}      
       <SectionStyle bgURL={props.imageURL}/>
     </div>
