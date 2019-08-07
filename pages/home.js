@@ -15,7 +15,7 @@ const home = () => {
   const fontStyle = "font-Arkhip text-center my-4 color text-gray-100 " + fontSize;
 
   return (
-    <div style={{ width: '100%', backgroundColor: 'blue', }}>
+    <div className="w-full">
       <PageHeader pageTitle="Duc Duchy's Home" />
       <Header />
 
@@ -48,7 +48,7 @@ const home = () => {
       </Section>
 
       { /* About Me Section */}
-      <div style={{ backgroundColor: 'blue' }}>About me section </div>
+      <div>About me section </div>
 
       {/* Achivement Section */}
       <div> Achievement section </div>

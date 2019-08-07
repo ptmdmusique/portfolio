@@ -5,15 +5,16 @@ import MediaQuery from 'react-responsive';
 
 const fontSize = "text-2xl"
 const buttonCN =
-  "font-bold py-2 px-4 mx-20 rounded inline-flex justify-center\
-   items-center text-gray-100 hover:text-green-400 "
+  "font-bold rounded inline-flex justify-center\
+   items-center text-gray-100 hover:text-green-400"
+const buttonSpacing = "py-2 px-4 mx-20 "
 const iconCN = "text-2xl mr-6 text-center ";
 const textCN = " text-center align-middle " + fontSize;
 
 const HeaderButton = (props) => {
   return (
     <Link href={"/" + props.page}>
-      <button className={buttonCN}>
+      <button className={buttonCN + buttonSpacing}>
         <i className={iconCN + props.iconName}></i>
         <p className={textCN}>{props.name}</p>
       </button>
@@ -23,16 +24,22 @@ const HeaderButton = (props) => {
 
 const Header = () => {
   return (
-    <div className="headerContainer flex justify-center h-20 w-full fixed">
-      <MediaQuery query="(min-device-width: 1224px)">
-        <HeaderButton page="home" name="Home" iconName="fas fa-home" />
-        <HeaderButton page="projects_works" name="Projects/Works" iconName="fas fa-project-diagram" />
-        <HeaderButton page="secret" name="Secret" iconName="fas fa-user-secret" />
+    <div >
+      <MediaQuery query="(min-device-width: 950px)">
+        <div className="headerContainer flex md:justify-center justify-start h-20 w-full fixed ">
+          <HeaderButton page="home" name="Home" iconName="fas fa-home" />
+          <HeaderButton page="projects_works" name="Projects/Works" iconName="fas fa-project-diagram" />
+          <HeaderButton page="secret" name="Secret" iconName="fas fa-user-secret" />
+        </div>
       </MediaQuery>
 
-      <MediaQuery query="(max-device-width: 1224px)">
-        {/* <HeaderButton page="projects_works" name="Projects/Works" /> */}
-        <i className="fas fa-bars"></i>
+      <MediaQuery query="(max-device-width: 950px)">
+        <div className="headerContainer flex justify-start h-20 w-full fixed ">
+          <button className={buttonCN + " py-2 px-4 mx-4 "}>
+            <i className={"fas fa-bars text-white text-2xl "}></i>
+            <p className="text-2xl ml-4">Menu</p>
+          </button>
+        </div>
       </MediaQuery>
 
       <style jsx>{`
