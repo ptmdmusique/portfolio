@@ -2,7 +2,7 @@ import React from 'react'
 import HeaderStyle from './Styles/HeaderStyle';
 import Link from 'next/link';
 import { FaHome, FaProjectDiagram, FaUserSecret } from 'react-icons/fa';
-import './Styles/tailwind.css';
+// import './Styles/tailwind.css';
 
 const HeaderButton = (props) => {
   const buttonCN = 
@@ -14,7 +14,7 @@ const HeaderButton = (props) => {
   return (
     <Link href={"/" + props.page}>
       <button className={buttonCN}>
-        <FaHome className={iconCN}/>
+        <props.component className={iconCN}/>
         <p className={textCN}>{props.name}</p>
       </button>
     </Link>
@@ -26,9 +26,9 @@ const Header = () => {
 
   return (
     <div className="headerContainer flex justify-center h-20">
-      <HeaderButton page="home" name="Home"/>
-      <HeaderButton page="projects_works" name="Projects/Works"/>
-      <HeaderButton page="secret" name="Secret"/>
+      <HeaderButton page="home" name="Home" component={FaHome}/>
+      <HeaderButton page="projects_works" name="Projects/Works" component={FaProjectDiagram}/>
+      <HeaderButton page="secret" name="Secret" component={FaUserSecret}/>
 
       <HeaderStyle/>
     </div>
