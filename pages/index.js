@@ -1,10 +1,4 @@
 import Head from 'next/head'
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-// NOTE this example only shows how to use the solid free icons.
-import {  faCheckSquare, faScrewdriver, faUser } from '@fortawesome/free-solid-svg-icons'
-
 const Index = () => ( 
   <div style={{background: 'black'}}>
     <Head>
@@ -17,9 +11,7 @@ const Index = () => (
   </div>
 );
 
-Index.getInitialProps = async ({ res }) => {
-  library.add(faCheckSquare, faScrewdriver, faUser)
-  
+Index.getInitialProps = async ({ res }) => { 
   if (res){
     res.writeHead(302, {
       Location: '/home'

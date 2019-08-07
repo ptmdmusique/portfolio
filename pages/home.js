@@ -1,34 +1,36 @@
+import PageHeader from 'components/PageHeader'
 import React from 'react'
-import Section from '../components/Section';
-import Header from '../components/Header';
+import Section from 'components/Section';
+import Header from 'components/Header';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 
-import '../tailwind.css'
+import 'assets/styles/tailwind.css'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 var nameImage = require('../assets/images/stars_space_sky_glitter_116409_3840x2160.jpg')
 
 const home = () => {
-  const fontSize = "lg:text-6xl xl:text-6xl text-2xl"
-  const fontStyle = "font-serif text-center my-4 color text-gray-100 " + fontSize;
-  
-  return ( 
-    <div style={{ width: '100%', backgroundColor: 'blue', }}> 
-      <Header/>
+  const fontSize = "lg:text-6xl xl:text-6xl md:text-4xl text-3xl"
+  const fontStyle = "font-Arkhip text-center my-4 color text-gray-100 " + fontSize;
 
-      { /* My Name Section */ } 
-      <Section 
-        image={nameImage} 
+  return (
+    <div style={{ width: '100%', backgroundColor: 'blue', }}>
+      <PageHeader pageTitle="Duc Duchy's Home" />
+      <Header />
+
+      { /* My Name Section */}
+      <Section
+        image={nameImage}
         imageURL={nameImage}
         additionalStyle="flex justify-center items-center"
-        >
+      >
         <div>
           <p className={fontStyle}>
             Duc Phan
           </p>
 
-          <hr className="border-2 w-6/12"/>
+          <hr className="border-2 w-6/12" />
 
           <AutoPlaySwipeableViews enableMouseEvents>
             <p className={fontStyle}>
@@ -45,14 +47,14 @@ const home = () => {
         </div>
       </Section>
 
-      { /* About Me Section */ } 
+      { /* About Me Section */}
       <div style={{ backgroundColor: 'blue' }}>About me section </div>
 
-      {/* Achivement Section */ } 
+      {/* Achivement Section */}
       <div> Achievement section </div>
 
-      {/* Passion Section  */ } 
-      <div> Passion Section </div> 
+      {/* Passion Section  */}
+      <div> Passion Section </div>
     </div>
   )
 }
