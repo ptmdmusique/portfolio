@@ -1,25 +1,34 @@
+import Router from 'next/router'
 import Head from 'next/head'
-const Index = () => ( 
-  <div style={{background: 'black'}}>
-    <Head>
-        <title>Duc Duchy</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
-    </Head>
+import { useEffect } from 'react';
 
-    <p style={{color: 'white'}}>asdasd</p>
-    <i style={{color: 'white', fontSize: 50}} className="fas fa-home"></i>
-  </div>
-);
+const Index = () => {
+  useEffect(() => {
+    Router.push('/home')
+  }, [])
+
+  return ( 
+    <div style={{background: 'black'}}>
+      <Head>
+          <title>Duc Duchy</title>
+          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+      </Head>
+  
+      <p style={{color: 'white'}}>asdasd</p>
+      <i style={{color: 'white', fontSize: 50}} className="fas fa-home"></i>
+    </div>
+  )
+};
 
 Index.getInitialProps = async ({ res }) => { 
-  if (res){
+  if (res && res.writeHead){
     res.writeHead(302, {
       Location: '/home'
     })
     res.end();
-  } else {
-    Route.push('/home')
   }
+
+  return {};
 }
 
 export default Index;
