@@ -8,11 +8,11 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import 'assets/styles/tailwind.css'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-var nameImage = require('../assets/images/stars_space_sky_glitter.jpg') 
+var nameImage = require('assets/images/toa_do_chanh.jpg') 
 
 const home = () => {
   const fontSize = "lg:text-6xl xl:text-6xl md:text-4xl text-3xl"
-  const fontStyle = "font-Arkhip text-center my-4 color text-gray-100 " + fontSize;
+  const fontStyle = "font-Rubik text-center my-4 color text-gray-100 " + fontSize;
 
   return (
     <div className="w-full">
