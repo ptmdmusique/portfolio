@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "@zeit/webpack-asset-relocator-loader": "^0.6.2",
     "animate.css": "^3.7.2",
     "easy-peasy": "^3.0.1",
     "file-loader": "^4.1.0",
