@@ -20,5 +20,5 @@ module.exports = compose([
       config.resolve.alias['~'] = __dirname
       return config
     }
-  }
+  } 
 ])
