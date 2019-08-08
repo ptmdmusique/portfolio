@@ -2,6 +2,7 @@
 const withPlugins = require('next-compose-plugins');
 const path = require('path')
 
+const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
 const optimizedImages = require('next-optimized-images');
@@ -54,5 +55,19 @@ module.exports = withPlugins([
   [withCSS, {}],
   [withImages, {}],
   [optimizedImages, {}],
-  [withAssetRelocator, {}]
+  [withAssetRelocator, {}],
+  [withBundleAnalyzer, {
+    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+    bundleAnalyzerConfig: {
+      server: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/server.html'
+      },
+      browser: {
+        analyzerMode: 'static',
+        reportFilename: '../bundles/client.html'
+      }
+    }
+  }]
 ], nextConfig)
