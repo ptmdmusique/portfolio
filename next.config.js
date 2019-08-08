@@ -22,11 +22,11 @@ const optimizedImages = require('next-optimized-images');
 //   } 
 // ])
 const nextConfig = {
-  distDir: 'build',
   webpack: (config, options) => {
     config.resolve.alias['components'] = path.join(__dirname, 'components')
     config.resolve.alias['assets'] = path.join(__dirname, 'assets')
     config.resolve.alias['pages'] = path.join(__dirname, 'pages')
+    config.resolve.alias['libs'] = path.join(__dirname, 'libs')
     config.resolve.alias['~'] = __dirname
     return config
   },
@@ -35,5 +35,5 @@ const nextConfig = {
 module.exports = withPlugins([
   [withCSS, {}],
   [withImages, {}],
-  [optimizedImages, {}]
+  // [optimizedImages, {}]
 ], nextConfig)
