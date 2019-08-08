@@ -6,7 +6,7 @@ import MediaQuery from 'react-responsive';
 const fontSize = "text-2xl"
 const buttonCN =
   "font-bold rounded inline-flex justify-center\
-   items-center text-gray-100 hover:text-green-400"
+   items-center text-gray-100 hover:text-green-400 "
 const buttonSpacing = "py-2 px-4 mx-20 "
 const iconCN = "text-2xl mr-6 text-center ";
 const textCN = " text-center align-middle " + fontSize;
