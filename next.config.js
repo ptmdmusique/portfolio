@@ -8,8 +8,9 @@ const withImages = require('next-images')
 const optimizedImages = require('next-optimized-images');
 
 // module.exports = compose([
-//   [withCSS, withCSSConfig],
-//   [withImages, withImagesConfig],
+//   [withCSS, {}],
+//   [withImages, {}],
+//   [optimizedImages, {}],
 //   {
 //     webpack: (config) => {
 //       config.resolve.alias['components'] = path.join(__dirname, 'components')

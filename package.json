@@ -39,7 +39,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "export": "yarn build && next export",
-    "prod": "NODE_ENV=production next build && next export",
+    "prod": "SET NODE_ENV=production && next build && next export",
     "publish": "yarn build && now"
   },
   "eslintConfig": {
