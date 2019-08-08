@@ -8,7 +8,7 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import 'assets/styles/tailwind.css'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-var nameImage = require('../assets/images/stars_space_sky_glitter.jpg')
+var nameImage = require('../assets/images/stars_space_sky_glitter.jpg') 
 
 const home = () => {
   const fontSize = "lg:text-6xl xl:text-6xl md:text-4xl text-3xl"
