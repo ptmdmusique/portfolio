@@ -1,12 +1,9 @@
 import Router from 'next/router'
 import Head from 'next/head'
 import { useEffect } from 'react';
-import { loadDB } from 'libs/db.js'
 
 const Index = () => {
   useEffect(() => {
-    loadDB();
-    
     Router.push('/home')
   }, [])
 

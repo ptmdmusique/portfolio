@@ -1,5 +1,5 @@
 import PageHeader from 'components/PageHeader'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Section from 'components/Section';
 import Header from 'components/Header';
 import SwipeableViews from 'react-swipeable-views';
@@ -7,11 +7,32 @@ import { autoPlay } from 'react-swipeable-views-utils';
 
 import 'assets/styles/tailwind.css'
 
-const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-var nameImage = require('../assets/images/stars_space_sky_glitter.jpg') 
+import initFirebase from 'libs/initFirebase';
 
-const home = () => {
-  const fontSize = "lg:text-6xl xl:text-6xl md:text-4xl text-3xl"
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+const Home = (props) => {
+  const [nameImageURL, setNameImageURL] = useState();
+  
+  const startInitFirebase = async () => {
+    const firebase = await initFirebase();
+    const storage = firebase.storage();
+
+    storage.ref('Images/WebResources/homePicture-min.jpeg')
+    .getDownloadURL()
+    .then(url => {
+      setNameImageURL(url);
+    })
+    .catch(err => {
+      console.warn("dbErr-Error retrieving home image : " + err)
+    })
+  }
+
+  useEffect(() => {
+    startInitFirebase();
+  }, [])
+
+  const fontSize = "lg:text-6xl xl:text-6xl md:text-5xl text-3xl"
   const fontStyle = "font-Rubik text-center my-4 color text-gray-100 " + fontSize;
 
   return (
@@ -21,8 +42,7 @@ const home = () => {
 
       { /* My Name Section */}
       <Section
-        image={nameImage}
-        imageURL={nameImage}
+        imageURL={nameImageURL}
         additionalStyle="flex justify-center items-center"
       >
         <div>
@@ -30,7 +50,7 @@ const home = () => {
             Duc Phan
           </p>
 
-          <hr className="border-2 w-6/12" />
+          <hr className="border-2 w-6/12 rounded " />
 
           <AutoPlaySwipeableViews enableMouseEvents>
             <p className={fontStyle}>
@@ -48,15 +68,15 @@ const home = () => {
       </Section>
 
       { /* About Me Section */}
-      <div>About me section </div>
+      {/* <div>About me section </div> */}
 
       {/* Achivement Section */}
-      <div> Achievement section </div>
+      {/* <div> Achievement section </div> */}
 
       {/* Passion Section  */}
-      <div> Passion Section </div>
+      {/* <div> Passion Section </div> */}
     </div>
   )
 }
 
-export default home
+export default Home

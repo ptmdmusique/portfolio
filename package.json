@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-css": "^1.0.1",
+    "@zeit/webpack-asset-relocator-loader": "^0.6.2",
     "animate.css": "^3.7.2",
     "easy-peasy": "^3.0.1",
     "file-loader": "^4.1.0",
@@ -40,8 +42,10 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "export": "yarn build && next export",
-    "prod": "SET NODE_ENV=production && next build && next export",
-    "publish": "yarn build && now"
+    "prod-mac": "NODE_ENV=production next build && next export",
+    "prod-win": "SET NODE_ENV=production && next build && next export",
+    "publish": "yarn build && now",
+    "analyze": "cross-env ANALYZE=1 next build --stats && cat .next/stats.txt"
   },
   "eslintConfig": {
     "extends": "react-app"
