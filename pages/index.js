@@ -7,21 +7,21 @@ const Index = () => {
     Router.push('/home')
   }, [])
 
-  return ( 
-    <div style={{background: 'black'}}>
+  return (
+    <div style={{ background: 'black' }}>
       <Head>
-          <title>Duc Duchy</title>
-          <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"/>
+        <title>Duc Duchy</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
       </Head>
-  
-      <p style={{color: 'white'}}>asdasd</p>
-      <i style={{color: 'white', fontSize: 50}} className="fas fa-home"></i>
+
+      <p style={{ color: 'white' }}>asdasd</p>
+      <i style={{ color: 'white', fontSize: 50 }} className="fas fa-home"></i>
     </div>
   )
 };
 
-Index.getInitialProps = async ({ res }) => { 
-  if (res && res.writeHead){
+Index.getInitialProps = async ({ res }) => {
+  if (res && res.writeHead) {
     res.writeHead(302, {
       Location: '/home'
     })

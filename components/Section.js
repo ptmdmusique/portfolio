@@ -9,7 +9,8 @@ const Section = (props) => {
       {props.children}
       <style jsx>{`
         .sectionContainer {
-          background-color: rgba(0,0,0,0.6);
+          background-position: center; 
+          background-color: rgba(0,0,0,0.75);
           background-blend-mode: darken;
           background-image: url("${props.imageURL}");
           background-size: cover;

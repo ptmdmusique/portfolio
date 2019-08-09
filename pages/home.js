@@ -10,16 +10,15 @@ import 'assets/styles/tailwind.css'
 import initFirebase from 'libs/initFirebase';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
-// var nameImage = require('../assets/images/stars_space_sky_glitter.jpg')
 
 const Home = (props) => {
   const [nameImageURL, setNameImageURL] = useState();
 
-  useEffect(async () => {
+  const startInitFirebase = async () => {
     const firebase = await initFirebase();
     const storage = firebase.storage();
 
-    storage.ref('Images/WebResources/stars_space_sky_glitter.jpg')
+    storage.ref('Images/WebResources/homePicture-min.jpeg')
       .getDownloadURL()
       .then(url => {
         setNameImageURL(url);
@@ -27,14 +26,17 @@ const Home = (props) => {
       .catch(err => {
         console.warn("dbErr-Error retrieving home image : " + err)
       })
+  }
 
+  useEffect(() => {
+    startInitFirebase();
   }, [])
 
-  const fontSize = "lg:text-6xl xl:text-6xl md:text-4xl text-3xl"
+  const fontSize = "lg:text-6xl xl:text-6xl md:text-5xl text-3xl"
   const fontStyle = "font-Rubik text-center my-4 color text-gray-100 " + fontSize;
 
   return (
-    <div className="w-full">
+    < div className="w-full" >
       <PageHeader pageTitle="Duc Duchy's Home" />
       <Header />
 
@@ -66,14 +68,14 @@ const Home = (props) => {
       </Section>
 
       { /* About Me Section */}
-      <div>About me section </div>
+      {/* <div>About me section </div> */}
 
       {/* Achivement Section */}
-      <div> Achievement section </div>
+      {/* <div> Achievement section </div> */}
 
       {/* Passion Section  */}
-      <div> Passion Section </div>
-    </div>
+      {/* <div> Passion Section </div> */}
+    </div >
   )
 }
 
