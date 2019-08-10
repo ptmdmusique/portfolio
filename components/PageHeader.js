@@ -7,9 +7,7 @@ const PageHeader = (props) => {
       <Head>
         <title>{props.pageTitle}</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
-        <link rel="stylesheet" href="animate.min.css">
-
-        </link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"></link>
       </Head>
       <style jsx global>{`

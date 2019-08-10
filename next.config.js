@@ -6,6 +6,7 @@ const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
 const optimizedImages = require('next-optimized-images');
+
 const withAssetRelocator = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
     webpack(config, options) {
@@ -54,7 +55,7 @@ const nextConfig = {
 module.exports = withPlugins([
   [withCSS, {}],
   [withImages, {}],
-  [optimizedImages, {}],
+  // [optimizedImages, {}],
   [withAssetRelocator, {}],
   [withBundleAnalyzer, {
     analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
