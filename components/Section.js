@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Section = (props) => {
-  const containerCN = "sectionContainer w-full h-screen " + (props.additionalStyle || "")
+  var containerCN = "sectionContainer w-full h-screen " + (props.additionalStyle || "")
+
+  if (props.scrolling) {
+    containerCN += " scolling ";
+  }
 
   return (
     <div
@@ -14,6 +18,16 @@ const Section = (props) => {
           background-blend-mode: darken;
           background-image: url("${props.imageURL}");
           background-size: cover;
+        }
+        
+        .scrolling {
+          background-repeat: repeat-x;
+          animation: slide 1s linear infinite;
+        }
+
+        @keyframes slide {
+          0%{ transform: translate3d(0, 0, 0); }
+          100%{ transform: translate3d(-100vw, 0, 0); }
         }
       `}</style>
     </div>

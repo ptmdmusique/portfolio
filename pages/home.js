@@ -9,6 +9,11 @@ import animateCSS from 'components/Animation';
 
 import 'assets/styles/tailwind.css'
 import helloSign from 'assets/images/hello-sign.png';
+import ninjaRun from 'assets/images/ninja-run.gif';
+import nearBG from 'assets/images/near-forest-bg.png';
+import middleBG from 'assets/images/middle-forest-bg.png';
+import farBG from 'assets/images/far-forest-bg.png';
+import HomeStyle from 'assets/styles/HomeStyle';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -19,7 +24,9 @@ const Home = (props) => {
     const firebase = await initFirebase();
     const storage = firebase.storage();
 
-    storage.ref('Images/WebResources/homePicture-min.jpeg')
+    //const refLink = "Images/WebResources/homePicture-min.jpeg";
+    const refLink = "Images/WebResources/pixel-bg.png";
+    storage.ref(refLink)
       .getDownloadURL()
       .then(url => {
         setNameImageURL(url);
@@ -33,12 +40,12 @@ const Home = (props) => {
     startInitFirebase();
 
     //Hello sign animation
-    animateCSS('.helloSign', ['fadeIn'], 
-      () => animateCSS('.helloSign', ['wobble'], 
-      () => animateCSS('.helloSign', ['fadeOut'], () => {
-        const node = document.querySelector('.helloSign');
-        node.classList.add('hidden');
-      })));
+    // animateCSS('.helloSign', ['fadeIn'], 
+    //   () => animateCSS('.helloSign', ['wobble'], 
+    //   () => animateCSS('.helloSign', ['fadeOut', "delay-1s"], () => {
+    //     const node = document.querySelector('.helloSign');
+    //     node.classList.add('hidden');
+    //   })));
   }, [])
 
   const fontSize = "lg:text-6xl md:text-5xl text-3xl"
@@ -52,7 +59,8 @@ const Home = (props) => {
       { /* My Name Section */}
       <Section
         imageURL={nameImageURL}
-        additionalStyle="flex justify-center items-center"
+        additionalStyle="flex justify-center items-center "
+        scrolling
       >
         <div>
           <p className={fontStyle}>
@@ -80,21 +88,52 @@ const Home = (props) => {
 
       </Section>
 
+      {/* <div className="anim-container absolute  ">
+        <div className="near-bg common-bg-style "/>
+      </div>
+
+      <div className="anim-container absolute  ">
+        <div className="middle-bg common-bg-style "/>
+      </div>
+
+      <div className="anim-container absolute  ">
+        <div className="far-bg common-bg-style "/>
+      </div>
 
       <img 
+        src={ninjaRun}
+        alt="Ninja Run"
+        className="ninjaRun absolute w-48 h-48 z-40 "
+      /> */}
+      <div className="anim-container">
+        <div className="far-bg common-bg-style"/>
+
+      </div>
+      <div className="anim-container">
+        <div className="middle-bg common-bg-style"/>
+      </div>
+
+      <div className="anim-container">
+        <div className="near-bg common-bg-style "/>
+      </div>
+
+
+      <div className="ninja-sign-container">
+        <img 
           src={helloSign}
           alt="Hello Sign"
-          className="helloSign absolute slow"
+          className="hello-sign absolute"
         />
+        <img 
+          src={ninjaRun}
+          alt="Ninja Run"
+          className="ninja-run"
+        />
+      </div>
+      <HomeStyle/>
 
-        <style jsx>{`
-          .helloSign {
-            height: 150px;
-            width: 150px;
-            bottom: 3%;
-            left: 3%;
-          }
-        `}</style>
+
+
       { /* About Me Section */}
       {/* <div>About me section </div> */}
 

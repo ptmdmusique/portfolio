@@ -54,7 +54,7 @@ const SideDrawer = () => {
       <style jsx>{`
         #drawer {
           margin-left: -25%;
-          transition: margin 1s;
+          transition: margin 0.25s;
         }
         #drawer.visibleDrawer {
           margin-left: 0;
