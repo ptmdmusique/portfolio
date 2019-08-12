@@ -43,6 +43,8 @@ const withAssetRelocator = (nextConfig = {}) => {
 
 const nextConfig = {
   webpack: (config, options) => {
+    config.node = { fs: 'empty' }
+
     config.resolve.alias['components'] = path.join(__dirname, 'components')
     config.resolve.alias['assets'] = path.join(__dirname, 'assets')
     config.resolve.alias['pages'] = path.join(__dirname, 'pages')
