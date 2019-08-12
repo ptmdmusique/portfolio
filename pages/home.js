@@ -5,14 +5,11 @@ import Header from 'components/Header';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import initFirebase from 'libs/initFirebase';
-import animateCSS from 'components/Animation';
+import Contact from 'components/Contact';
 
 import 'assets/styles/tailwind.css'
 import helloSign from 'assets/images/hello-sign.png';
 import ninjaRun from 'assets/images/ninja-run.gif';
-import nearBG from 'assets/images/near-forest-bg.png';
-import middleBG from 'assets/images/middle-forest-bg.png';
-import farBG from 'assets/images/far-forest-bg.png';
 import HomeStyle from 'assets/styles/HomeStyle';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -36,6 +33,7 @@ const Home = (props) => {
       })
   }
 
+  
   useEffect(() => {
     startInitFirebase();
 
@@ -60,7 +58,6 @@ const Home = (props) => {
       <Section
         imageURL={nameImageURL}
         additionalStyle="flex justify-center items-center "
-        scrolling
       >
         <div>
           <p className={fontStyle}>
@@ -88,23 +85,6 @@ const Home = (props) => {
 
       </Section>
 
-      {/* <div className="anim-container absolute  ">
-        <div className="near-bg common-bg-style "/>
-      </div>
-
-      <div className="anim-container absolute  ">
-        <div className="middle-bg common-bg-style "/>
-      </div>
-
-      <div className="anim-container absolute  ">
-        <div className="far-bg common-bg-style "/>
-      </div>
-
-      <img 
-        src={ninjaRun}
-        alt="Ninja Run"
-        className="ninjaRun absolute w-48 h-48 z-40 "
-      /> */}
       <div className="anim-container">
         <div className="far-bg common-bg-style"/>
 
@@ -132,7 +112,7 @@ const Home = (props) => {
       </div>
       <HomeStyle/>
 
-
+      <Contact/>
 
       { /* About Me Section */}
       {/* <div>About me section </div> */}

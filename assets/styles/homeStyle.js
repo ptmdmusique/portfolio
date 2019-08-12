@@ -27,7 +27,7 @@ const homeStyle = () => {
 
         z-index: 14;
         bottom: 50px;
-        left: -5px;
+        left: -10px;
         position: relative;
       }
       .ninja-run {
@@ -38,7 +38,7 @@ const homeStyle = () => {
 
         z-index: 15;        
         bottom: 0; 
-        left: -80px;    
+        left: -85px;    
         position: relative;
 
         width: 100px;
