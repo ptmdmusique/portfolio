@@ -3,7 +3,7 @@ import nearBG from 'assets/images/near-forest-bg.png';
 import middleBG from 'assets/images/middle-forest-bg.png';
 import farBG from 'assets/images/far-forest-bg.png';
 
-const homeStyle = () => {
+const HomeStyle = () => {
   return (
     <style 
       jsx="true"
@@ -91,4 +91,4 @@ const homeStyle = () => {
   )
 }
 
-export default homeStyle
+export default HomeStyle
