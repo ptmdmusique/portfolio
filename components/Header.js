@@ -6,13 +6,13 @@ import SideDrawer from 'components/SideDrawer';
 const fontSize = "sm:text-2xl text-xl lg:text-3xl md:text-2xl xl:text-4xl "
 const buttonCN =
   "font-bold rounded inline-flex justify-center\
-   items-center text-gray-100 hover:text-green-400 "
+   items-center text-gray-100 hover:text-green-400 topBotomBordersOut "
 const buttonSpacing = "py-2 px-2 lg:px-8 mx-8 "
-const iconCN = "mr-6 text-center " + fontSize;
+const iconCN = "butt mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
 
 const Header = () => {
-  const headerCN = "headerContainer h-20 md:h-32 w-full fixed border-b-2 "
+  const headerCN = "butt headerContainer h-20 md:h-32 w-full fixed border-b-2 "
 
   const HeaderButton = (props) => {
     return (
@@ -24,21 +24,21 @@ const Header = () => {
       </Link>
     )
   }
-  
+
   return (
     <div className="headerContainer ">
       <div className={"md:justify-center justify-start hidden lg:flex " + headerCN}>
-        {RouteList.map(data => 
-          <HeaderButton 
-            key={data.page} 
-            page={data.page} 
-            name={data.name} 
-            iconName={data.iconName} 
-        />)}
+        {RouteList.map(data =>
+          <HeaderButton
+            key={data.page}
+            page={data.page}
+            name={data.name}
+            iconName={data.iconName}
+          />)}
       </div>
 
       <div className={"justify-start lg:hidden flex " + headerCN}>
-        <button 
+        <button
           onClick={() => {
             const wrapper = document.getElementById('drawer');
             wrapper.classList.toggle('visibleDrawer');
@@ -58,6 +58,36 @@ const Header = () => {
           -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
           -moz-box-sizing: border-box;    /* Firefox, other Gecko */
           box-sizing: border-box;         /* Opera/IE 8+ */
+
+          z-index: 40; 
+        }
+
+        .butt::after, .butt::before {
+          content: "Butt -> ";
+          color: red;
+        }
+
+        .topBottomBordersOut:before, .topBottomBorderOut:after {
+          position: absolute;
+          left: 0px;
+          width: 100%;
+          height: 2px;
+          background: #FFF;
+          content: "";
+          transition: all 0.3s;
+        }
+        .topBottomBordersOut:before {
+          top: 0px;
+          transform: translateY(10px);
+        }
+        .topBotomBordersOut:after {
+          bottom: 0px;
+          transform: translateY(-10px);
+        }
+        .topBotomBordersOut:hover:before, .topBotomBordersOut:hover:after
+        {
+            opacity: 1;
+            transform: translateY(0px);
         }
       `}</style>
     </div>

@@ -33,7 +33,7 @@ const Home = (props) => {
       })
   }
 
-  
+
   useEffect(() => {
     startInitFirebase();
 
@@ -60,7 +60,9 @@ const Home = (props) => {
         additionalStyle="flex justify-center items-center "
         scrolling
         imageWidth="507"
-        scrollTime="1"
+        imageHeight="267"
+        scrollTime="40"
+        direction={-1}
       >
         <div>
           <p className={fontStyle}>
@@ -89,33 +91,33 @@ const Home = (props) => {
       </Section>
 
       <div className="anim-container">
-        <div className="far-bg common-bg-style"/>
+        <div className="far-bg common-bg-style" />
 
       </div>
       <div className="anim-container">
-        <div className="middle-bg common-bg-style"/>
+        <div className="middle-bg common-bg-style" />
       </div>
 
       <div className="anim-container">
-        <div className="near-bg common-bg-style "/>
+        <div className="near-bg common-bg-style " />
       </div>
 
 
       <div className="ninja-sign-container">
-        <img 
+        <img
           src={helloSign}
           alt="Hello Sign"
           className="hello-sign absolute"
         />
-        <img 
+        <img
           src={ninjaRun}
           alt="Ninja Run"
           className="ninja-run"
         />
       </div>
-      <HomeStyle/>
+      <HomeStyle />
 
-      <Contact/>
+      <Contact />
 
       { /* About Me Section */}
       {/* <div>About me section </div> */}
