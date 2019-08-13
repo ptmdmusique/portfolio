@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 const Section = (props) => {
   var containerCN = "sectionContainer w-full h-screen " + (props.additionalStyle || "")
@@ -16,19 +16,25 @@ const Section = (props) => {
           background-color: rgba(0,0,0,0.75);
           background-blend-mode: darken;
           z-index: -2;
-          overflow: hidden;
         }
         
+        .scrolling {
+          image-rendering: -moz-crisp-edges;
+          image-rendering: -webkit-crisp-edges;
+          image-rendering: pixelated;
+          image-rendering: crisp-edges;
+        }
+
         .backgroundImage {
           background-image: url("${props.imageURL}");
-          background-size: cover;
+          background-size: auto;
 
           position: absolute;
           top: 0;
           left: 0;
           z-index: -3;
           
-          width: 100%;
+          width: 500%;
           height: 100%;
         }
 
@@ -38,12 +44,14 @@ const Section = (props) => {
           image-rendering: pixelated;
           image-rendering: crisp-edges;
           
-          animation: slide 10s linear infinite;
+          background-repeat: repeat-x;
+          animation: slide ${String(props.scrollTime) || "2"}s linear infinite;
         }
 
         @keyframes slide {
           0%{ transform: translate3d(0, 0, 0); }
-          100%{ transform: translate3d(-100vw, 0, 0); }
+          100%{ transform: translate3d(-${(props.imageWidth + "px") || "100vw"}, 0, 0); }
+          
         }
       `}</style>
     </div>

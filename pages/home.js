@@ -58,6 +58,9 @@ const Home = (props) => {
       <Section
         imageURL={nameImageURL}
         additionalStyle="flex justify-center items-center "
+        scrolling
+        imageWidth="507"
+        scrollTime="1"
       >
         <div>
           <p className={fontStyle}>

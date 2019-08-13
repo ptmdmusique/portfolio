@@ -46,7 +46,7 @@ const HomeStyle = () => {
 
       .anim-container {        
         height: 30%;
-        width: 200%;
+        width: 2000%;
         position: fixed;
         left: 0;
         bottom: 0;
@@ -75,7 +75,7 @@ const HomeStyle = () => {
       }
       @keyframes slide {
         0%{ transform: translateX(0vw); }
-        100%{ transform: translateX(-100vw); }
+        100%{ transform: translateX(${-256 * 2}px); }
       }
 
       @keyframes slide_2 {
