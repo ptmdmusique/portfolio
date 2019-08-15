@@ -11,7 +11,7 @@ const HomeStyle = () => {
       .character-container {
         height: 30%;
         width: 100%;
-        position: relative;
+        position: fixed;
         left: 0;
         bottom: 0;
         display: flex;
@@ -68,7 +68,7 @@ const HomeStyle = () => {
       }
 
 
-      .anim-container {        
+      .bg-container {        
         height: 30%;
         width: 2000%;
         position: fixed;

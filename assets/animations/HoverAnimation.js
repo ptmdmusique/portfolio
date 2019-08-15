@@ -1,18 +1,27 @@
 import React from 'react'
 
-const Animation = () => {
+const Animation = (props) => {
   return (
     <style jsx global>{`
+      .scale {
+        transform: scale(${props.scaleFrom || "0"});
+        transition all ${props.scaleTime || "0.3"}s;
+      }
+
+      .scale:hover {
+        transform: scale(${props.scaleTo || "1"});
+      }
+
       .topBottomBordersOut::before, .topBottomBordersOut::after {
         position: absolute;
         left: 0;
         width: 100%;
-        height: 2px;
+        height: ${props.borderInOutWidth || "2"}px;
         background: #FFF;
         content: "";
         
         opacity: 0;
-        transition: all 0.3s;        
+        transition: all ${props.borderInOutTime || "0.3"}s;        
       }
 
       .topBottomBordersOut::before {
@@ -27,7 +36,7 @@ const Animation = () => {
 
       
       .topBottomBordersOut:hover:after, .topBottomBordersOut:hover:before {
-        background: #71ff2f;
+        background: ${props.borderInOutAnimColor || "#71ff2f"};
         opacity: 1;
       }
 
@@ -45,28 +54,6 @@ const Animation = () => {
         transform: translate3d(0, 0, 0);
       }
       
-      .ripple::after {
-        content: "";
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        pointer-events: none;
-        background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
-        background-repeat: no-repeat;
-        background-position: 50%;
-        transform: scale(10, 10);
-        opacity: 0;
-        transition: transform .5s, opacity 1s;
-      }
-      
-      .ripple:active::after {
-        transform: scale(0, 0);
-        opacity: .3;
-        transition: 0s;
-      }
     `}</style>
   )
 }

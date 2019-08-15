@@ -2,11 +2,11 @@ import React from 'react'
 import Link from 'next/link';
 import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
-import Animation from 'assets/styles/Animation';
+import HoverAnimation from 'assets/animations/HoverAnimation';
 
 const fontSize = "sm:text-2xl text-xl lg:text-3xl md:text-2xl xl:text-4xl "
 const buttonCN =
-  "font-bold rounded inline-flex justify-center\
+  "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 hover:text-green-300 "
 const buttonSpacing = "py-2 px-2 lg:px-8 mx-8 "
 const iconCN = "mr-6 text-center " + fontSize;
@@ -18,7 +18,7 @@ const Header = () => {
   const HeaderButton = (props) => {
     return (
       <Link href={"/" + props.page}>
-        <button className={buttonCN + buttonSpacing + "buttonContainer topBottomBordersOut "}>
+        <button className={buttonCN + buttonSpacing + "buttonContainer scale "}>
           <i className={iconCN + props.iconName}></i>
           <p className={textCN}>{props.name}</p>
         </button>
@@ -54,7 +54,7 @@ const Header = () => {
 
       <style jsx global>{`
         .headerContainer {
-          background-color: rgba(0,0,0,0.6);
+          background-color: rgba(0,0,0,0.3);
   
           -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
           -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -65,11 +65,14 @@ const Header = () => {
 
         .buttonContainer {
           position: relative;
-        }
-        
+        }        
       `}</style>
 
-      <Animation/>
+      <HoverAnimation
+        borderInOutWidth={1}
+        scaleFrom={1}
+        scaleTo={1.2}
+      />
     </div>
   )
 }
