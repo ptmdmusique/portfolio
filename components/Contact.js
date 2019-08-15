@@ -21,7 +21,7 @@ const Contact = () => {
   }
 
   return (
-    <div className="absolute bottom-0 right-0 bg-black rounded-tl-lg pl-2 md:pl-4 opacity-75 ">
+    <div className="absolute bottom-0 right-0 bg-black rounded-tl-lg pl-2 md:pl-4 opacity-75 z-50 ">
 
       <a className={buttonCN} 
         href="https://www.facebook.com/ptmdmusique"

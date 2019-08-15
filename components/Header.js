@@ -2,17 +2,18 @@ import React from 'react'
 import Link from 'next/link';
 import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
+import Animation from 'assets/styles/Animation';
 
 const fontSize = "sm:text-2xl text-xl lg:text-3xl md:text-2xl xl:text-4xl "
 const buttonCN =
   "font-bold rounded inline-flex justify-center\
-   items-center text-gray-100 hover:text-green-300 ripple "
+   items-center text-gray-100 hover:text-green-300 "
 const buttonSpacing = "py-2 px-2 lg:px-8 mx-8 "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
 
 const Header = () => {
-  const headerCN = "headerContainer h-20 md:h-32 w-full fixed border-b-2 "
+  const headerCN = "headerContainer h-20 md:h-32 w-full fixed "
 
   const HeaderButton = (props) => {
     return (
@@ -66,71 +67,9 @@ const Header = () => {
           position: relative;
         }
         
-        .topBottomBordersOut::before, .topBottomBordersOut::after {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background: #FFF;
-          content: "";
-          
-          opacity: 0;
-          transition: all 0.3s;        
-        }
-
-        .topBottomBordersOut::before {
-          top: 0px;   
-          transform: translateY(10px);
-        }
-
-        .topBottomBordersOut::after {
-          bottom: 0px;   
-          transform: translateY(-10px);
-        }
-
-        
-        .topBottomBordersOut:hover:after, .topBottomBordersOut:hover:before {
-          background: #71ff2f;
-          opacity: 1;
-        }
-
-        .topBottomBordersOut:hover:after {
-          transform: translateY(-20px);
-        }
-
-        .topBottomBordersOut:hover:before {
-          transform: translateY(20px);
-        }
-
-        .ripple {
-          position: relative;
-          overflow: hidden;
-          transform: translate3d(0, 0, 0);
-        }
-        
-        .ripple::after {
-          content: "";
-          display: block;
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          pointer-events: none;
-          background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
-          background-repeat: no-repeat;
-          background-position: 50%;
-          transform: scale(10, 10);
-          opacity: 0;
-          transition: transform .5s, opacity 1s;
-        }
-        
-        .ripple:active::after {
-          transform: scale(0, 0);
-          opacity: .3;
-          transition: 0s;
-        }
       `}</style>
+
+      <Animation/>
     </div>
   )
 }
