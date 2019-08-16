@@ -28,6 +28,7 @@
     "react-image-gallery": "^0.8.18",
     "react-responsive": "^7.0.0",
     "react-scripts": "3.0.1",
+    "react-scrollable-anchor": "^0.6.1",
     "react-swipeable-views": "^0.13.3",
     "react-toastify": "^5.3.2",
     "responsive-loader": "^1.2.0",

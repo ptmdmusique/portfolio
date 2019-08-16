@@ -7,18 +7,23 @@ import HoverAnimation from 'assets/animations/HoverAnimation';
 const fontSize = "sm:text-2xl text-xl lg:text-3xl md:text-2xl xl:text-4xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
-   items-center text-gray-100 hover:text-green-300 "
+   items-center text-gray-100 relative "
 const buttonSpacing = "py-2 px-2 lg:px-8 mx-8 "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
+const headerCN = "header-container h-20 md:h-32 w-full fixed "
 
-const Header = () => {
-  const headerCN = "headerContainer h-20 md:h-32 w-full fixed "
+const activeCN = "text-green-300 active-button ";
+const inactiveCN = "hover:text-green-300 scale ";
 
+const Header = (props) => {
   const HeaderButton = (props) => {
+    const isActive = props.activeRoute === props.page;
     return (
       <Link href={"/" + props.page}>
-        <button className={buttonCN + buttonSpacing + "buttonContainer scale "}>
+        <button
+          className={buttonCN + buttonSpacing + (isActive ? activeCN : inactiveCN)}
+          disabled={isActive}>
           <i className={iconCN + props.iconName}></i>
           <p className={textCN}>{props.name}</p>
         </button>
@@ -27,7 +32,7 @@ const Header = () => {
   }
 
   return (
-    <div className="headerContainer ">
+    <div className="header-container ">
       <div className={"md:justify-center justify-start hidden lg:flex " + headerCN}>
         {RouteList.map(data =>
           <HeaderButton
@@ -35,6 +40,7 @@ const Header = () => {
             page={data.page}
             name={data.name}
             iconName={data.iconName}
+            activeRoute={props.activeRoute}
           />)}
       </div>
 
@@ -50,10 +56,10 @@ const Header = () => {
         </button>
       </div>
 
-      <SideDrawer />
+      <SideDrawer activeRoute={props.activeRoute} />
 
       <style jsx global>{`
-        .headerContainer {
+        .header-container {
           background-color: rgba(0,0,0,0.3);
   
           -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
@@ -61,11 +67,30 @@ const Header = () => {
           box-sizing: border-box;         /* Opera/IE 8+ */
 
           z-index: 40; 
+        }     
+        
+        .active-button::before {
+          position: absolute;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background: #42f59e;
+          content: "";
+
+          bottom: 20px;   
+
+          animation: 0.25s linear 0s 1 scale-button-before
         }
 
-        .buttonContainer {
-          position: relative;
-        }        
+        @keyframes scale-button-before {
+          0% {
+            transform: scale(0);            
+          }
+
+          100% {
+            transform: scale(1);
+          }
+        }
       `}</style>
 
       <HoverAnimation

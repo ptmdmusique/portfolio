@@ -22,11 +22,11 @@ const Contact = () => {
   }
 
   return (
-    <div className="absolute bottom-0 right-0 bg-black \
+    <div className="fixed bottom-0 right-0 bg-black \
                     rounded-tl-lg pl-2 md:pl-4 opacity-75 z-50 \
                     flex py-1 ">
 
-      <a className={buttonCN }
+      <a className={buttonCN}
         href="https://www.facebook.com/ptmdmusique"
         target="_blank"
         rel="noopener noreferrer">

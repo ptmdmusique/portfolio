@@ -1,5 +1,5 @@
+import React from 'react';
 import PageHeader from 'components/PageHeader'
-import React from 'react'
 import Section from 'components/Section';
 import Header from 'components/Header';
 import SwipeableViews from 'react-swipeable-views';
@@ -23,7 +23,7 @@ const Home = (props) => {
   return (
     < div className="w-full h-full" >
       <PageHeader pageTitle="Duc Duchy's Home" />
-      <Header />
+      <Header activeRoute={"home"} />
 
       { /* My Name Section */}
       <Section
