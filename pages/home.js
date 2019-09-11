@@ -18,7 +18,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Home = (props) => {
   const fontSize = "lg:text-6xl md:text-5xl text-3xl"
-  const fontStyle = "font-Rubik text-center my-4 color text-gray-100 " + fontSize;
+  const fontStyle = "font-PixelArt text-center my-8 color text-gray-100 " + fontSize;
 
   return (
     < div className="w-full h-full" >

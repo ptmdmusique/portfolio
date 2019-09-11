@@ -5,6 +5,7 @@ const path = require('path')
 const withBundleAnalyzer = require("@zeit/next-bundle-analyzer");
 const withCSS = require('@zeit/next-css')
 const withImages = require('next-images')
+const withSass = require('@zeit/next-sass')
 const optimizedImages = require('next-optimized-images');
 
 const withAssetRelocator = (nextConfig = {}) => {
@@ -55,6 +56,7 @@ const nextConfig = {
 module.exports = withPlugins([
   [withCSS, {}],
   [withImages, {}],
+  [withSass, {}],
   // [optimizedImages, {}],
   [withAssetRelocator, {}],
   [withBundleAnalyzer, {
