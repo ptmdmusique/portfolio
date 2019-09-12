@@ -21,7 +21,7 @@ const FlickeringSign = (props) => {
   const flickerDuration = props.flickerDuration || ((props.randomIndex || 5) % 10 + 2)
 
   return (
-    <div className="flickeringSignContainer ">
+    <div className="flickeringSignContainer font-PixelArt tracking-widest ">
       {/* {separateLetter()} */}
       {props.content}
 
@@ -80,7 +80,7 @@ const FlickeringSign = (props) => {
           }
           92.5% {
             border-color: inherit;
-            text-shadow: inherit;
+            text-shadow: none;
           }
         }
       `}</style>

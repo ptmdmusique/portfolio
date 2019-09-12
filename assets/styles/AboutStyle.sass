@@ -2,7 +2,6 @@
 @import "~aos/dist/aos.css"
 
 .about-section-general
-  height: 500px
   width: 100%
 
 .about-section-1
@@ -16,9 +15,12 @@
 .about-section-3
   @extend .about-section-general
   background-color: rgb(random(255), random(255), random(255))
-[data-aos^=hide][data-aos^=hide]
-  opacity: 0
-  transition-property: opacity, transform
-[data-aos^=hide][data-aos^=hide].aos-animate
-  opacity: 1
-  transform: translate(0)
+
+.about-section-cover
+  background-color: rgba(0, 0, 0, 0.7)
+  z-index: 10
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
