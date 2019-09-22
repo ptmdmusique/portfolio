@@ -14,6 +14,7 @@ const PageHeader = (props) => {
         {/* Fonts */}
         <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"></link>
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet"/>
 
       </Head>
       <style jsx global>{`
@@ -41,6 +42,15 @@ const PageHeader = (props) => {
           }
           .font-PixelArt {
             font-family: "Press Start 2P";
+          }
+
+
+          @font-face {
+            font-family: "Source Code Pro";
+            src: url("https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap");
+          }
+          .font-Code {
+            font-family: "Source Code Pro";
           }
         `}</style>
     </div>

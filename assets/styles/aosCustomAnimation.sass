@@ -1,5 +1,12 @@
+[data-aos].aos-animate 
+  pointer-events: inherit
+  
 [data-aos^=hide]
+  pointer-events: none
   opacity: 1
   transition-property: opacity, transform
 [data-aos^=hide].aos-animate
+  pointer-events: none
   opacity: 0
+
+@import "~aos/dist/aos.css"

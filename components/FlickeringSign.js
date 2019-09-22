@@ -21,25 +21,18 @@ const FlickeringSign = (props) => {
   const flickerDuration = props.flickerDuration || ((props.randomIndex || 5) % 10 + 2)
 
   return (
-    <div className="flickeringSignContainer font-PixelArt tracking-widest ">
+    <div className="flickeringSignContainer font-PixelArt tracking-widest text-lg text-center ">
       {/* {separateLetter()} */}
       {props.content}
 
       <style jsx>{`   
         .flickeringSignContainer {
-          -webkit-writing-mode: vertical-lr;
-          -ms-writing-mode: tb-lr;
-          writing-mode: vertical-lr;
-          text-orientation: upright;
-          align-text: center;
-
-          font-size: 1.5rem;
           color: ${props.textColor || "white"};
           text-shadow: 0.5px 0.3px 10px ${props.textColor || "white"};
 
           padding: 20px 10px 20px 5px;
 
-          border-width : 3px 3px 3px 0px;
+          border-width : 3px 3px 3px 3px;
           border-style: solid;
           border-color: ${props.borderColor || "#fff"};     
 
