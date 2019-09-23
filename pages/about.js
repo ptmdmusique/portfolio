@@ -47,6 +47,13 @@ const AchievementData = [
     },
 ]
 
+const EducationData = [
+    {
+        schoolName: "Bế Văn Đàn",
+        year: "",
+    },
+]
+
 const AboutMe = () => {
     const animCN = "";
     const commonCN = "relative h-screen ";
@@ -231,7 +238,7 @@ const AboutMe = () => {
             <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
                 <div className="w-full h-full flex flex-col pb-12">
                     <h1 className="mb-2 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">Education</h1>    
-                    <div className="h-full overflow-y-scroll mt-6">
+                    <div className="h-full overflow-y-scroll mt-6 px-4">
                         <VerticalTimeline>
                             <VerticalTimelineElement
                                 iconStyle={{ background: 'rgb(33, 150, 243)', justifyContent: "center", textAlign: "center", display: "flex", flexDirection: 'column' }}

@@ -9,7 +9,7 @@ const AboutSection = (props) => {
       <div className="w-full h-full flex flex-col content-center items-center">
         <div className="about-section-cover" data-aos="hide" />    
 
-        <div className="w-full h-full pl-6 pr-6 md:pl-16 md:pr-16 lg:pl-32 lg:pr-32 xl:pl-64 xl:pr-64 ">
+        <div className="w-full h-full px-6 md:px-16 lg:px-32 xl:px-64 ">
           {props.children}
         </div>
       </div>
