@@ -17,10 +17,20 @@
 .about-section-2
   @extend .about-section-general
   background-color: rgba(0, 0, 0, 0.9)
+  background-blend-mode: darken
+  background-position: right
+  background-image: url('../images/homePicture-min.jpeg')
+  background-repeat: none
+  background-size: cover
 
 .about-section-3
   @extend .about-section-general
-  background-color: rgb(random(255), random(255), random(255))
+  background-color: rgba(0, 0, 0, 0.9)
+  background-blend-mode: darken
+  background-position: right
+  background-image: url('../images/lasan.jpg')
+  background-repeat: none
+  background-size: cover
 
 .about-section-cover
   pointer-events: none
@@ -33,6 +43,8 @@
   height: 100%
 
 .about-achievement-bracket
+  @media screen and ( max-width: $media-md )
+    margin-left: 8px
   &::before
     content: "["
     margin-left: -15px

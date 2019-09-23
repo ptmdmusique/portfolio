@@ -4,10 +4,11 @@ import PageHeader from 'components/PageHeader'
 import Header from 'components/Header';
 import Contact from 'components/Contact';
 import AboutSection from 'components/AboutSection';
-// import TextTransition from "react-text-transition"
-//import { presets } from "react-text-transition";
 const presets = dynamic(() => import("react-text-transition").then(mod => mod.presets), {ssr: false});
 const TextTransition = dynamic(import("react-text-transition"), {ssr: false});
+
+import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -227,7 +228,35 @@ const AboutMe = () => {
                 {renderAchievementList()}
             </AboutSection>
 
-            <AboutSection className={"about-section-3 " + commonCN} data-aos={animCN}>
+            <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
+                <div className="w-full h-full flex flex-col pb-12">
+                    <h1 className="mb-2 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">Education</h1>    
+                    <div className="h-full overflow-y-scroll mt-6">
+                        <VerticalTimeline>
+                            <VerticalTimelineElement
+                                iconStyle={{ background: 'rgb(33, 150, 243)', justifyContent: "center", textAlign: "center", display: "flex", flexDirection: 'column' }}
+                                icon={<i class="fas fa-school text-white"></i>}
+                            >
+                                <h3>Test School</h3>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement>
+                                <h3>Test Test</h3>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement>
+                                <h3>Test Test</h3>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement>
+                                <h3>Test Test</h3>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement>
+                                <h3>Test Test</h3>
+                            </VerticalTimelineElement>
+                            <VerticalTimelineElement>
+                                <h3>Test Test</h3>
+                            </VerticalTimelineElement>
+                        </VerticalTimeline>
+                    </div>
+                </div>
             </AboutSection>
 
             <AboutSection className={"about-section-1 " + commonCN} data-aos={animCN}>
