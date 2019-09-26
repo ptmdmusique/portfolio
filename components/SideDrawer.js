@@ -12,8 +12,7 @@ const SideDrawer = (props) => {
   const inactiveButton = "hover:bg-green-300 hover:text-green-600 ";
   const iconCN = "self-center " + fontSize;
   const textCN = "pl-4 hidden md:block " + fontSize;
-  const commonContainerCN =
-    "bg-black shadow float fixed h-full top-0 left-0 px-4 z-50 ";
+  const commonContainerCN = "bg-black shadow float fixed h-full top-0 left-0 px-4 z-50 ";
 
   const RenderListItem = (data) => {
     const isActive = props.activeRoute === data.page;
@@ -39,7 +38,7 @@ const SideDrawer = (props) => {
   }
 
   return (
-    <div id="drawer" className={commonContainerCN + " w-1/4 justify-start "}>
+    <div id="drawer" className={commonContainerCN + " w-1/4 md:w-3/5 justify-start "}>
       <div className="mb-2 justify-center md:justify-between border-b-2 flex px-4 py-4 md:py-2 items-center mt-4 ">
         <p className="text-white font-bold text-4xl hidden md:block ">Menu</p>
         <button
@@ -57,7 +56,7 @@ const SideDrawer = (props) => {
 
       <style jsx>{`
         #drawer {
-          margin-left: -25%;
+          margin-left: -75%;
           transition: margin 0.25s;
         }
         #drawer.visibleDrawer {

@@ -6,9 +6,11 @@ import Contact from 'components/Contact';
 import AboutSection from 'components/AboutSection';
 const presets = dynamic(() => import("react-text-transition").then(mod => mod.presets), {ssr: false});
 const TextTransition = dynamic(import("react-text-transition"), {ssr: false});
-
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+
+import PerfectScrollbar from 'react-perfect-scrollbar'
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -49,8 +51,76 @@ const AchievementData = [
 
 const EducationData = [
     {
-        schoolName: "Bế Văn Đàn",
-        year: "",
+        schoolName: "Portland State University",
+        year: "2018-??",
+        subEvent: [            
+            "Got into President List for 1 year",
+            "Interned at Cambia Health Solution",
+        ],
+        iconName: "fas fa-brain",
+        iconColor: "#ffa726",
+    },
+    {
+        schoolName: "Portland Community College",
+        year: "2016-2017",
+        subEvent: [
+            "Got into President List for 2 years",
+            "Became ECE Robotic Lab Tutor",
+            "Became Math/Computer Science Tutor",            
+        ],
+        iconName: "fas fa-brain",
+        iconColor: "#a0af22",
+    },
+    {
+        schoolName: "Tigard High School",
+        year: "2015-2015",
+        subEvent: [
+            "Earned 5 I.T. certificates",
+            "Joined Robotic Team",
+            "Joined OGPC Competition",
+            "Participated in Willamette Programming Contest",
+        ],
+        iconName: "fas fa-graduation-cap",
+        iconColor: "#66bb6a",
+    },
+    {
+        schoolName: "Trần Đại Nghĩa High School",
+        year: "2013-2015_1/2",
+        subEvent: [
+            "Participated in Advanced Math Team",
+            "Participated in Computer Science Team",
+            "Participated in Multiple Computer Science Competitions",
+        ],
+        iconName: "fas fa-school",
+        iconColor: "#26a69a",
+    },
+    {
+        schoolName: "Lê Văn Tám Middle School",
+        year: "2009-2012",
+        subEvent: [
+            "Participated in Advanced Math Team",
+            "Participated in Regional Advanced Math Competition",
+        ],
+        iconName: "fas fa-pen",
+        iconColor: "#42a5f5"
+    },
+    {
+        schoolName: "Bế Văn Đàn Elementary School",
+        year: "2004-2008",
+        subEvent: [
+            "Start learning Advanced Math :D",
+        ],
+        iconName: "fas fa-briefcase",
+        iconColor: "#7e57c2",
+    },
+    {
+        schoolName: "7A Kindergarten",
+        year: "2004-2008",
+        subEvent: [
+            "Start learning... how to eat fast :)",
+        ],
+        iconName: "fas fa-baby",
+        iconColor: "#ec407a",
     },
 ]
 
@@ -106,6 +176,7 @@ const AboutMe = () => {
         typeWriter("about-born-city", "\"the glamourous Saigon\"", textEffectTime );
         typeWriter("about-born-date", "\"09/05/1998\"", textEffectTime );
 
+        window.scrollTo(0, 0);
     }, [])
 
     const typeWriter = (id, text, time) => {
@@ -151,8 +222,41 @@ const AboutMe = () => {
         return returnData;
     }
 
+    const renderEducationList = () => {
+        const educationList = [];
+        EducationData.map((data, indx) => {
+            const subEventList = [];
+            data.subEvent.map((subEvent, indx) => {
+                subEventList.push(
+                    <li key={indx}>
+                        {subEvent}
+                    </li>
+                )
+            })
+
+            educationList.push(                
+                <VerticalTimelineElement
+                    key={indx}
+                    iconStyle={{ background: (data.iconColor || "#00e676"), justifyContent: "center", textAlign: "center", display: "flex", flexDirection: 'column' }}
+                    icon={<i className={(data.iconName || "fas fa-school") + " text-white text-sm md:text-base lg:text-lg xl:text-xl"}></i>}
+                    date={<p className="text-white font-semibold">{data.year}</p>}
+                >
+                    <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl">{data.schoolName || "School's Name"}</h1>
+                    <h2 className="text-sm md:text-base lg:text-lg xl:hidden font-semibold">{data.year || "??-??"}</h2>
+                    <ul className="list-disc text-sm md:text-base lg:text-lg pl-2 md:pl-4 mt-1">
+                        {subEventList}
+                    </ul>
+                </VerticalTimelineElement>
+            )
+        })
+
+        return <VerticalTimeline>
+            {educationList}
+        </VerticalTimeline>
+    }
+
     return (
-        <div className="w-full h-full">
+        <div className="w-full">
             <PageHeader pageTitle="About Duc Duchy" />
             <Header activeRoute={"about"} />
 
@@ -238,41 +342,14 @@ const AboutMe = () => {
             <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
                 <div className="w-full h-full flex flex-col pb-12">
                     <h1 className="mb-2 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">Education</h1>    
-                    <div className="h-full overflow-y-scroll mt-6 px-4">
-                        <VerticalTimeline>
-                            <VerticalTimelineElement
-                                iconStyle={{ background: 'rgb(33, 150, 243)', justifyContent: "center", textAlign: "center", display: "flex", flexDirection: 'column' }}
-                                icon={<i class="fas fa-school text-white"></i>}
-                            >
-                                <h3>Test School</h3>
-                            </VerticalTimelineElement>
-                            <VerticalTimelineElement>
-                                <h3>Test Test</h3>
-                            </VerticalTimelineElement>
-                            <VerticalTimelineElement>
-                                <h3>Test Test</h3>
-                            </VerticalTimelineElement>
-                            <VerticalTimelineElement>
-                                <h3>Test Test</h3>
-                            </VerticalTimelineElement>
-                            <VerticalTimelineElement>
-                                <h3>Test Test</h3>
-                            </VerticalTimelineElement>
-                            <VerticalTimelineElement>
-                                <h3>Test Test</h3>
-                            </VerticalTimelineElement>
-                        </VerticalTimeline>
-                    </div>
+                    {/* <div className="h-full overflow-y-scroll mt-6 px-1">
+                        {renderEducationList()}
+                    </div> */}
+                    <PerfectScrollbar
+                    >
+                        {renderEducationList()}
+                    </PerfectScrollbar>
                 </div>
-            </AboutSection>
-
-            <AboutSection className={"about-section-1 " + commonCN} data-aos={animCN}>
-            </AboutSection>
-
-            <AboutSection className={"about-section-2 " + commonCN} data-aos={animCN}>
-            </AboutSection>
-
-            <AboutSection className={"about-section-3 " + commonCN} data-aos={animCN}>
             </AboutSection>
 
             <Contact />

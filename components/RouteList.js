@@ -11,8 +11,13 @@ const RouteList = [
     },
     {
         page: "projects_works",
-        name: "Projects",
+        name: "Projects and Works",
         iconName: "fas fa-project-diagram"
+    },
+    {
+        page: "others",
+        name: "Others",
+        iconName: "fab fa-mix"
     },
     {
         page: "secret",

@@ -8,7 +8,6 @@ const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-4xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 relative "
-const buttonSpacing = "py-2 px-2 lg:px-4 mx-8 xl:px-8 xl:mx-16"
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
 const headerCN = "header-container h-20 md:h-32 w-full fixed "
@@ -22,7 +21,7 @@ const Header = (props) => {
     return (
       <Link href={"/" + props.page}>
         <button
-          className={buttonCN + buttonSpacing + (isActive ? activeCN : inactiveCN)}
+          className={buttonCN + (isActive ? activeCN : inactiveCN)}
           disabled={isActive}>
           <i className={iconCN + props.iconName}></i>
           <p className={textCN}>{props.name}</p>
@@ -33,7 +32,7 @@ const Header = (props) => {
 
   return (
     <div className="header-container ">
-      <div className={"md:justify-center justify-start hidden lg:flex " + headerCN}>
+      <div className={"hidden lg:flex justify-around px-2 xl:px-16 " + headerCN}>
         {RouteList.map(data =>
           <HeaderButton
             key={data.page}
