@@ -4,7 +4,7 @@ import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
 import HoverAnimation from 'assets/animations/HoverAnimation';
 
-const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-4xl "
+const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 relative focus:outline-none "

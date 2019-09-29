@@ -129,7 +129,8 @@ const AboutMe = () => {
     const animCN = "";
     const commonCN = "relative h-screen ";
 
-    const fontSize = "text-1xl md:text-2xl lg:text-3xl xl:text-4xl ";
+    const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-2xl ";
+    const headTextCN = "mb-2 text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-Code";
     const isInline = "sm:inline ";
     const paragraphCN = "text-white " + fontSize + isInline;
     const varCN = "text-teal-300 font-Code inline " + fontSize;
@@ -209,7 +210,7 @@ const AboutMe = () => {
                     springConfig={ springPreset }
                     />
                 <TextTransition 
-                    className={"mt-4 md:mt-8 lg:mt-16 font-bold " + achievementContentCN} 
+                    className={"mt-4 md:mt-8 lg:mt-12 font-bold " + achievementContentCN} 
                     text={curData.prize} 
                     springConfig={springPreset }
                     />
@@ -242,9 +243,9 @@ const AboutMe = () => {
                     icon={<i className={(data.iconName || "fas fa-school") + " text-white text-sm md:text-base lg:text-lg xl:text-xl"}></i>}
                     date={<p className="text-white font-semibold">{data.year}</p>}
                 >
-                    <h1 className="text-lg md:text-xl lg:text-2xl xl:text-3xl">{data.schoolName || "School's Name"}</h1>
+                    <h1 className="text-lg md:text-xl lg:text-2xl xl:text-2xl">{data.schoolName || "School's Name"}</h1>
                     <h2 className="text-sm md:text-base lg:text-lg xl:hidden font-semibold">{data.year || "??-??"}</h2>
-                    <ul className="list-disc text-sm md:text-base lg:text-lg pl-2 md:pl-4 mt-1">
+                    <ul className="list-disc text-sm md:text-base lg:text-base pl-2 md:pl-4 mt-1">
                         {subEventList}
                     </ul>
                 </VerticalTimelineElement>
@@ -266,7 +267,7 @@ const AboutMe = () => {
                 data-aos={animCN}
             >
                 <div className="flex flex-col justify-center w-full h-full">
-                    <h1 className="mb-4 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">
+                    <h1 className={headTextCN}>
                         Hello World!
                     </h1>    
 
@@ -298,7 +299,7 @@ const AboutMe = () => {
                         <p className={stringCN} id="about-born-date"/>
                     </span>
 
-                    <span className="pt-16 xl:pt-32 text-sm">
+                    <span className="pt-16 text-sm">
                         <p className={paragraphCN}>Psst! Wanna know more about Saigon? </p>            
                         <p className={paragraphCN}>Check these out!</p>
                         <div className="flex mt-4 md:mt-8 lg:mt-16 justify-around">
@@ -314,7 +315,7 @@ const AboutMe = () => {
             </AboutSection>
 
             <AboutSection className={"about-section-2 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
-                <h1 className="mb-2 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">Achievement</h1>    
+                <h1 className={headTextCN}>Achievement</h1>    
                 <span className={infoSectionCN}>
                     <p className={paragraphCN}>I got "beaten" by knowledge </p>            
                     <p className={paragraphCN}>... but also rewarded at the same time! </p>
@@ -342,7 +343,7 @@ const AboutMe = () => {
 
             <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
                 <div className="w-full h-full flex flex-col pb-12">
-                    <h1 className="mb-2 text-white text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-Code">Education</h1>    
+                    <h1 className={headTextCN}>Education</h1>    
                     {/* <div className="h-full overflow-y-scroll mt-6 px-1">
                         {renderEducationList()}
                     </div> */}

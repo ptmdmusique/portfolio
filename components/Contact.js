@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import HoverAnimation from 'assets/animations/HoverAnimation';
 
 const Contact = () => {
-  const buttonCN = "btn text-xl md:text-2xl lg:text-4xl m-2 w-10 h-10 md:w-16 md:h-16 ";
+  const buttonCN = "btn text-xl md:text-2xl lg:text-3xl m-2 w-10 h-10 md:w-12 md:h-12 ";
   // const buttonCN = "text-2xl md:text-4xl lg:text-6xl mx-2 md:mx-4 "
   // const iconCN = "text-white hover:text-green-400 scale ";
   const iconCN = "self-center ";
