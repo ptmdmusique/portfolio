@@ -100,15 +100,6 @@ const Home = (props) => {
       <HomeStyle />
 
       <Contact />
-
-      { /* About Me Section */}
-      {/* <div>About me section </div> */}
-
-      {/* Achivement Section */}
-      {/* <div> Achievement section </div> */}
-
-      {/* Passion Section  */}
-      {/* <div> Passion Section </div> */}
     </div >
   )
 }

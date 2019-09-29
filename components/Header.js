@@ -7,7 +7,7 @@ import HoverAnimation from 'assets/animations/HoverAnimation';
 const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-4xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
-   items-center text-gray-100 relative "
+   items-center text-gray-100 relative focus:outline-none "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
 const headerCN = "header-container h-20 md:h-32 w-full fixed "

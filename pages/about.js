@@ -55,6 +55,7 @@ const EducationData = [
         year: "2018-??",
         subEvent: [            
             "Got into President List for 1 year",
+            "Office of Informatic Technologies (OIT) Technician",
             "Interned at Cambia Health Solution",
         ],
         iconName: "fas fa-brain",
@@ -185,7 +186,7 @@ const AboutMe = () => {
     }
 
     const typeWriterHelper = (id, text, time, curPos) => {
-        if (curPos < text.length){
+        if (curPos < text.length && document.getElementById(id) != null){
             document.getElementById(id).innerHTML += text.charAt(curPos++);
             setTimeout(() => typeWriterHelper(id, text, time, curPos), time / text.length * 1000);
         }

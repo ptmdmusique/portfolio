@@ -14,7 +14,7 @@ const Index = () => {
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
       </Head>
 
-      <p style={{ color: 'white' }}>asdasd</p>
+      <p style={{ color: 'white' }}>{"You shouldn't be here :)"}</p>
       <i style={{ color: 'white', fontSize: 50 }} className="fas fa-home"></i>
     </div>
   )
