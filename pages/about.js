@@ -129,8 +129,8 @@ const AboutMe = () => {
     const animCN = "";
     const commonCN = "relative h-screen ";
 
-    const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-xl ";
-    const headTextCN = "mb-4 text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl font-Code";
+    const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-xl 2k:text-4xl ";
+    const headTextCN = "mb-4 2k:mb-8 text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2k:text-6xl font-Code";
     const isInline = "sm:inline ";
     const paragraphCN = "text-white " + fontSize + isInline;
     const varCN = "text-teal-300 font-Code inline " + fontSize;
@@ -210,12 +210,12 @@ const AboutMe = () => {
                     springConfig={ springPreset }
                     />
                 <TextTransition 
-                    className={"mt-4 md:mt-8 lg:mt-12 font-bold " + achievementContentCN} 
+                    className={"mt-4 md:mt-8 lg:mt-12 2k:mt-16 font-bold " + achievementContentCN} 
                     text={curData.prize} 
                     springConfig={springPreset }
                     />
                 <TextTransition 
-                    className={"mt-1 md:mt-2 lg:mt-4 " + achievementContentCN} 
+                    className={"mt-1 md:mt-2 lg:mt-4 2k:mt-8 " + achievementContentCN} 
                     text={curData.description} 
                     springConfig={ springPreset }
                     />
@@ -240,12 +240,12 @@ const AboutMe = () => {
                 <VerticalTimelineElement
                     key={indx}
                     iconStyle={{ background: (data.iconColor || "#00e676"), justifyContent: "center", textAlign: "center", display: "flex", flexDirection: 'column' }}
-                    icon={<i className={(data.iconName || "fas fa-school") + " text-white text-sm md:text-base lg:text-lg xl:text-xl"}></i>}
-                    date={<p className="text-white font-semibold">{data.year}</p>}
+                    icon={<i className={(data.iconName || "fas fa-school") + " text-white text-sm md:text-base lg:text-lg xl:text-xl 2k:text-3xl "}></i>}
+                    date={<p className="text-white font-semibold ">{data.year}</p>}
                 >
-                    <h1 className="text-lg md:text-xl lg:text-2xl xl:text-2xl">{data.schoolName || "School's Name"}</h1>
+                    <h1 className="text-lg md:text-xl lg:text-2xl xl:text-2xl 2k:text-4xl">{data.schoolName || "School's Name"}</h1>
                     <h2 className="text-sm md:text-base lg:text-lg xl:hidden font-semibold">{data.year || "??-??"}</h2>
-                    <ul className="list-disc text-sm md:text-base lg:text-base pl-2 md:pl-4 mt-1">
+                    <ul className="list-disc text-sm md:text-base lg:text-base 2k:text-2xl pl-2 md:pl-4 mt-1">
                         {subEventList}
                     </ul>
                 </VerticalTimelineElement>
@@ -342,8 +342,8 @@ const AboutMe = () => {
             </AboutSection>
 
             <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
-                <div className="w-full h-full flex flex-col pb-12">
-                    <h1 className={headTextCN}>Education</h1>    
+                <div className="w-full h-full flex flex-col pb-12 2k:pb-24">
+                    <h1 className={headTextCN + " text-center"}>Education</h1>    
                     {/* <div className="h-full overflow-y-scroll mt-6 px-1">
                         {renderEducationList()}
                     </div> */}

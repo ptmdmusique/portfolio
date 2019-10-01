@@ -4,13 +4,13 @@ import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
 import HoverAnimation from 'assets/animations/HoverAnimation';
 
-const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl "
+const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl 2k:text-5xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 relative focus:outline-none "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
-const headerCN = "header-container h-20 md:h-32 w-full fixed "
+const headerCN = "header-container h-20 md:h-32 xl:h-48 w-full fixed "
 
 const activeCN = "text-green-300 active-button ";
 const inactiveCN = "hover:text-green-300 scale ";
@@ -65,7 +65,7 @@ const Header = (props) => {
           -moz-box-sizing: border-box;    /* Firefox, other Gecko */
           box-sizing: border-box;         /* Opera/IE 8+ */
 
-          z-index: 40; 
+          z-index: 1000; 
         }     
         
         .active-button::before {

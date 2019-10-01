@@ -17,7 +17,7 @@ import HomeStyle from 'assets/styles/HomeStyle';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const Home = (props) => {
-  const fontSize = "2k:text-5xl lg:text-4xl md:text-3xl text-2xl"
+  const fontSize = "2k:text-6xl lg:text-4xl md:text-3xl text-2xl"
   const fontStyle = "font-Rubik text-center my-4 color text-gray-100 " + fontSize;
 
   return (
