@@ -10,7 +10,7 @@ const buttonCN =
    items-center text-gray-100 relative focus:outline-none "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
-const headerCN = "header-container h-20 md:h-32 xl:h-48 w-full fixed "
+const headerCN = "header-container h-20 md:h-32 2k:h-48 w-full fixed "
 
 const activeCN = "text-green-300 active-button ";
 const inactiveCN = "hover:text-green-300 scale ";

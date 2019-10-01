@@ -10,6 +10,7 @@ const optimizedImages = require('next-optimized-images');
 
 const withAssetRelocator = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
+    target: "server",
     webpack(config, options) {
       const { isServer } = options
 
