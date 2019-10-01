@@ -20,12 +20,12 @@ const Header = (props) => {
     const isActive = props.activeRoute === props.page;
     return (
       <Link href={"/" + props.page}>
-        <button
+        <a
           className={buttonCN + (isActive ? activeCN : inactiveCN)}
           disabled={isActive}>
           <i className={iconCN + props.iconName}></i>
           <p className={textCN}>{props.name}</p>
-        </button>
+        </a>
       </Link>
     )
   }

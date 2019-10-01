@@ -129,8 +129,8 @@ const AboutMe = () => {
     const animCN = "";
     const commonCN = "relative h-screen ";
 
-    const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-2xl ";
-    const headTextCN = "mb-2 text-white text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-Code";
+    const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-xl ";
+    const headTextCN = "mb-4 text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl font-Code";
     const isInline = "sm:inline ";
     const paragraphCN = "text-white " + fontSize + isInline;
     const varCN = "text-teal-300 font-Code inline " + fontSize;
