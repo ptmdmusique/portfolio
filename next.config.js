@@ -9,8 +9,7 @@ const withSass = require('@zeit/next-sass')
 const optimizedImages = require('next-optimized-images');
 
 const withAssetRelocator = (nextConfig = {}) => {
-  return Object.assign({}, nextConfig, {
-    target: "server",
+  return Object.assign({}, nextConfig, { 
     webpack(config, options) {
       const { isServer } = options
 
@@ -44,6 +43,7 @@ const withAssetRelocator = (nextConfig = {}) => {
 }
 
 const nextConfig = {
+  target: "server",
   webpack: (config, options) => {
     config.resolve.alias['components'] = path.join(__dirname, 'components')
     config.resolve.alias['assets'] = path.join(__dirname, 'assets')
@@ -59,19 +59,19 @@ module.exports = withPlugins([
   [withImages, {}],
   [withSass, {}],
   // [optimizedImages, {}],
-  [withAssetRelocator, {}],
-  [withBundleAnalyzer, {
-    analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
-    analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
-    bundleAnalyzerConfig: {
-      server: {
-        analyzerMode: 'static',
-        reportFilename: '../bundles/server.html'
-      },
-      browser: {
-        analyzerMode: 'static',
-        reportFilename: '../bundles/client.html'
-      }
-    }
-  }]
+  [withAssetRelocator, {}]
+  // [withBundleAnalyzer, {
+  //   analyzeServer: ["server", "both"].includes(process.env.BUNDLE_ANALYZE),
+  //   analyzeBrowser: ["browser", "both"].includes(process.env.BUNDLE_ANALYZE),
+  //   bundleAnalyzerConfig: {
+  //     server: {
+  //       analyzerMode: 'static',
+  //       reportFilename: '../bundles/server.html'
+  //     },
+  //     browser: {
+  //       analyzerMode: 'static',
+  //       reportFilename: '../bundles/client.html'
+  //     }
+  //   }
+  // }]
 ], nextConfig)
