@@ -12,7 +12,8 @@ import ninjaRun from 'assets/images/ninja-run.gif';
 import houndWalk from 'assets/images/hound-walk.gif';
 import batFly from 'assets/images/bat-fly.gif';
 import pixelBG from 'assets/images/pixel-bg.png';
-import HomeStyle from 'assets/styles/HomeStyle';
+// import HomeStyle from 'assets/styles/HomeStyle';
+import "assets/styles/HomeStyle.sass"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -97,7 +98,7 @@ const Home = (props) => {
         />
       </div>
 
-      <HomeStyle />
+      {/* <HomeStyle /> */}
 
       <Contact />
     </div >

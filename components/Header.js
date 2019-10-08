@@ -4,6 +4,8 @@ import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
 import HoverAnimation from 'assets/animations/HoverAnimation';
 
+import "assets/styles/HeaderStyle.sass"
+
 const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl 2k:text-5xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
@@ -22,7 +24,8 @@ const Header = (props) => {
       <Link href={"/" + props.page}>
         <a
           className={buttonCN + (isActive ? activeCN : inactiveCN)}
-          disabled={isActive}>
+          disabled={isActive}
+          onClick={() => console.log("---Routing event: Going to " + props.name)}>
           <i className={iconCN + props.iconName}></i>
           <p className={textCN}>{props.name}</p>
         </a>
@@ -56,41 +59,6 @@ const Header = (props) => {
       </div>
 
       <SideDrawer activeRoute={props.activeRoute} />
-
-      <style jsx global>{`
-        .header-container {
-          background-color: rgba(0,0,0,0.3);
-  
-          -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-          -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-          box-sizing: border-box;         /* Opera/IE 8+ */
-
-          z-index: 1000; 
-        }     
-        
-        .active-button::before {
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 2px;
-          background: #42f59e;
-          content: "";
-
-          bottom: 20px;   
-
-          animation: 0.25s linear 0s 1 scale-button-before
-        }
-
-        @keyframes scale-button-before {
-          0% {
-            transform: scale(0);            
-          }
-
-          100% {
-            transform: scale(1);
-          }
-        }
-      `}</style>
 
       <HoverAnimation
         borderInOutWidth={1}
