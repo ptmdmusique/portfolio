@@ -51,7 +51,7 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "next build && next export",
+    "build": "next build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "export": "yarn build && next export",
