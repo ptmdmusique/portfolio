@@ -35,7 +35,7 @@ const Home = (props) => {
         scrollTime="40"
         direction={-1}
       >
-        <div>
+        <div className="flex flex-col items-center">
           <p className={fontStyle}>
             Duc Phan
           </p>
