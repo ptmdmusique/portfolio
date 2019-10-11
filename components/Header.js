@@ -21,7 +21,8 @@ const Header = (props) => {
   const HeaderButton = (props) => {
     const isActive = props.activeRoute === props.page;
     return (
-      <Link href={"/" + props.page}>
+      <Link 
+        href={"/" + props.page}>
         <a
           className={buttonCN + (isActive ? activeCN : inactiveCN)}
           disabled={isActive}
@@ -32,6 +33,29 @@ const Header = (props) => {
       </Link>
     )
   }
+
+  // const renderNavItems = () => {
+  //   const tempList = [];
+
+  //   RouteList.map((props, index) => {      
+  //     const isActive = props.activeRoute === props.page;
+  //     tempList.push(
+  //       <Link 
+  //         href={"/" + props.page}
+  //         key={index}>
+  //         <a
+  //           className={buttonCN + (isActive ? activeCN : inactiveCN)}
+  //           disabled={isActive}
+  //           onClick={() => console.log("---Routing event: Going to " + props.name)}>
+  //           <i className={iconCN + props.iconName}></i>
+  //           <p className={textCN}>{props.name}</p>
+  //         </a>
+  //       </Link>
+  //     )
+  //   })
+
+  //   return tempList
+  // }
 
   return (
     <div className="header-container ">
@@ -44,12 +68,13 @@ const Header = (props) => {
             iconName={data.iconName}
             activeRoute={props.activeRoute}
           />)}
+          {/* {renderNavItems()} */}
       </div>
 
       <div className={"justify-start lg:hidden flex " + headerCN}>
         <button
           onClick={() => {
-            const wrapper = document.getElementById('drawer');
+          const wrapper = document.getElementById('drawer');
             wrapper.classList.toggle('visibleDrawer');
           }}
           className={buttonCN + " py-2 px-4 mx-4 "}>
