@@ -2,15 +2,22 @@
 @import "./GeneralStyle.sass"
 
 .project_intro
-  background-image: url('../images/light-bulb-min.jpg')
+  background-image: url('/static/images/light-bulb-min.jpg')
   background-repeat: none
   background-size: cover
   background-color: rgba(0, 0, 0, 0.7)
   background-blend-mode: darken
 
-.project_intro_text
-  text-shadow: 5px 5px #e2e2e2c4
+.project_card_button
+  @apply text-sm
+  &::after
+    transition: 0.1s
+    font-size: 0
+    opacity: 0
+    content: "More Info"
+  &:hover::after
+    opacity: 1
+    @apply text-sm ml-2
+    
 
-.projects_works_overlay
-  &::before
-    content: "<"
+    

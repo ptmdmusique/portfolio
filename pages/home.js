@@ -7,12 +7,11 @@ import { autoPlay } from 'react-swipeable-views-utils';
 import Contact from 'components/Contact';
 
 import 'assets/styles/tailwind.css'
-import helloSign from 'assets/images/hello-sign.png';
-import ninjaRun from 'assets/images/ninja-run.gif';
-import houndWalk from 'assets/images/hound-walk.gif';
-import batFly from 'assets/images/bat-fly.gif';
-import pixelBG from 'assets/images/pixel-bg.png';
-// import HomeStyle from 'assets/styles/HomeStyle';
+const helloSignPath = '/static/images/hello-sign.png';
+const ninjaRunPath = '/static/images/ninja-run.gif';
+const houndWalkPath = '/static/images/hound-walk.gif';
+const batFlyPath = '/static/images/bat-fly.gif';
+const pixelBGPath = '/static/images/pixel-bg.png';
 import "assets/styles/HomeStyle.sass"
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -28,7 +27,7 @@ const Home = (props) => {
 
       { /* My Name Section */}
       <Section
-        imageURL={pixelBG}
+        imageURL={pixelBGPath}
         additionalStyle="flex justify-center items-center "
         scrolling
         imageWidth="507"
@@ -77,28 +76,26 @@ const Home = (props) => {
 
       <div className="character-container">
         <img
-          src={helloSign}
+          src={helloSignPath}
           alt="Hello Sign"
           className="hello-sign pixel-object"
         />
         <img
-          src={ninjaRun}
+          src={ninjaRunPath}
           alt="Ninja Run"
           className="ninja-run pixel-object pixel-object"
         />
         <img
-          src={houndWalk}
+          src={houndWalkPath}
           alt="Hound Walk"
           className="hound-walk pixel-object"
         />
         <img
-          src={batFly}
+          src={batFlyPath}
           alt="Bat Fly"
           className="bat-fly pixel-object"
         />
       </div>
-
-      {/* <HomeStyle /> */}
 
       <Contact />
     </div >

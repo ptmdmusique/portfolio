@@ -3,15 +3,15 @@ import 'aos/dist/aos.css'
 import App from 'next/app';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-    // this exposes the query to the user
-    pageProps.query = ctx.query
-    return { pageProps }
-  }
+  // static async getInitialProps({ Component, ctx }) {
+  //   let pageProps = {}
+  //   if (Component.getInitialProps) {
+  //     pageProps = await Component.getInitialProps(ctx)
+  //   }
+  //   // this exposes the query to the user
+  //   pageProps.query = ctx.query
+  //   return { pageProps }
+  // }
 
   componentDidMount() {
     AOS.init({

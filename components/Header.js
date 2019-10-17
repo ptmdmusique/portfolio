@@ -6,7 +6,7 @@ import HoverAnimation from 'assets/animations/HoverAnimation';
 
 import "assets/styles/HeaderStyle.sass"
 
-const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl 2k:text-5xl "
+const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-2xl 2k:text-4xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 relative focus:outline-none "
@@ -33,29 +33,6 @@ const Header = (props) => {
       </Link>
     )
   }
-
-  // const renderNavItems = () => {
-  //   const tempList = [];
-
-  //   RouteList.map((props, index) => {      
-  //     const isActive = props.activeRoute === props.page;
-  //     tempList.push(
-  //       <Link 
-  //         href={"/" + props.page}
-  //         key={index}>
-  //         <a
-  //           className={buttonCN + (isActive ? activeCN : inactiveCN)}
-  //           disabled={isActive}
-  //           onClick={() => console.log("---Routing event: Going to " + props.name)}>
-  //           <i className={iconCN + props.iconName}></i>
-  //           <p className={textCN}>{props.name}</p>
-  //         </a>
-  //       </Link>
-  //     )
-  //   })
-
-  //   return tempList
-  // }
 
   return (
     <div className="header-container ">
