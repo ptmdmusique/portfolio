@@ -5,19 +5,39 @@
   background-image: url('/static/images/light-bulb-min.jpg')
   background-repeat: none
   background-size: cover
-  background-color: rgba(0, 0, 0, 0.7)
+  background-color: rgba(0, 0, 0, 0.8)
   background-blend-mode: darken
+  background-position: right
 
 .project_card_button
   @apply text-sm
   &::after
     transition: 0.1s
     font-size: 0
+    text-align: center
     opacity: 0
     content: "More Info"
   &:hover::after
     opacity: 1
-    @apply text-sm ml-2
-    
+    @apply text-sm ml-2 
 
+    @media screen and ( min-width: $media-md )
+      @apply text-lg ml-4
+    @media screen and ( min-width: $media-lg )
+      @apply text-xl ml-4
+    @media screen and ( min-width: $media-2k )
+      @apply text-2xl ml-4
     
+.project_lightbox_grid  
+  justify-items: center
+  display: flex
+  justify-content: center
+  flex-direction: column
+  @media screen and ( min-width: $media-md )
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-gap: 1em
+
+  @media screen and ( min-width: $media-xl )
+    grid-template-columns: repeat(3, 1fr)
+    grid-gap: 1em

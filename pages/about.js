@@ -127,7 +127,7 @@ const EducationData = [
 
 const AboutMe = () => {
     const animCN = "";
-    const commonCN = "relative h-screen ";
+    const commonCN = "relative ";
 
     const fontSize = "text-lg md:text-2xl lg:text-2xl xl:text-xl 2k:text-4xl ";
     const headTextCN = "mb-4 2k:mb-8 text-white text-3xl md:text-4xl lg:text-5xl xl:text-4xl 2k:text-6xl font-Code";
@@ -224,7 +224,7 @@ const AboutMe = () => {
                 >
                     <h1 className="text-lg md:text-xl lg:text-2xl xl:text-2xl 2k:text-4xl">{data.schoolName || "School's Name"}</h1>
                     <h2 className="text-sm md:text-base lg:text-lg xl:hidden font-semibold">{data.year || "??-??"}</h2>
-                    <ul className="list-disc text-sm md:text-base lg:text-base 2k:text-2xl pl-2 md:pl-4 mt-1">
+                    <ul className="list-disc text-sm md:text-base lg:text-base 2k:text-xl text-gray-700 pl-2 md:pl-4 mt-1">
                         {subEventList}
                     </ul>
                 </VerticalTimelineElement>
@@ -242,7 +242,7 @@ const AboutMe = () => {
             <Header activeRoute={"about"} />
 
             <AboutSection 
-                className={"about-section-1 " + commonCN} 
+                className={"about-section-1 h-screen " + commonCN} 
                 data-aos={animCN}
             >
                 <div className="flex flex-col justify-center w-full h-full">
@@ -293,7 +293,7 @@ const AboutMe = () => {
                 </div>
             </AboutSection>
 
-            <AboutSection className={"about-section-2 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
+            <AboutSection className={"about-section-2 pt-12 md:pt-32 h-screen " + commonCN} data-aos={animCN}>
                 <h1 className={headTextCN}>Achievement</h1>    
                 <span className={infoSectionCN}>
                     <p className={paragraphCN}>I got "beaten" by knowledge </p>            
@@ -321,15 +321,9 @@ const AboutMe = () => {
             </AboutSection>
 
             <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
-                <div className="w-full h-full flex flex-col pb-12 2k:pb-24">
-                    <h1 className={headTextCN + " text-center"}>Education</h1>    
-                    {/* <div className="h-full overflow-y-scroll mt-6 px-1">
-                        {renderEducationList()}
-                    </div> */}
-                    <PerfectScrollbar
-                    >
-                        {renderEducationList()}
-                    </PerfectScrollbar>
+                <div className="w-full h-auto flex flex-col pb-12 2k:pb-24 overflow-hidden">
+                    <h1 className={headTextCN + " text-center mb-8 md:mb-16 2k:mb-24"}>Education</h1>    
+                    {renderEducationList()}
                 </div>
             </AboutSection>
 

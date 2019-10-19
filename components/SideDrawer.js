@@ -8,7 +8,7 @@ const SideDrawer = (props) => {
   const buttonCN =
     "w-full items-center justify-center flex px-4 text-white py-1 rounded \
         md:justify-start h-24 relative "
-  const activeButton = "active-button text-green-300 ";
+  const activeButton = "text-green-300 ";
   const inactiveButton = "hover:bg-green-300 hover:text-green-600 ";
   const iconCN = "self-center " + fontSize;
   const textCN = "pl-4 hidden md:block " + fontSize;
@@ -61,19 +61,6 @@ const SideDrawer = (props) => {
         }
         #drawer.visibleDrawer {
           margin-left: 0;
-        }
-
-        .active-button::before {
-          position: absolute;
-          left: 0;
-          width: 30%;
-          height: 1px;
-          background: #42f59e;
-          content: "";
-
-          bottom: 20px;   
-
-          animation: 0.25s linear 0s 1 scale-button-before
         }
 
         @keyframes scale-button-before {
