@@ -9,10 +9,6 @@ const TextTransition = dynamic(import("react-text-transition"), {ssr: false});
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-import PerfectScrollbar from 'react-perfect-scrollbar'
-import 'react-perfect-scrollbar/dist/css/styles.css';
-
-import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'assets/styles/AboutStyle.sass'
 

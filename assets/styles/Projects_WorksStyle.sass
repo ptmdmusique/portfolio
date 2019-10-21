@@ -26,7 +26,7 @@
     @media screen and ( min-width: $media-lg )
       @apply text-xl ml-4
     @media screen and ( min-width: $media-2k )
-      @apply text-2xl ml-4
+      @apply text-xl ml-4
     
 .project_lightbox_grid  
   justify-items: center
@@ -41,3 +41,8 @@
   @media screen and ( min-width: $media-xl )
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 1em
+    padding: 0% 10%
+
+.project_lightbox_card
+  @apply w-screen h-screen
+  background-color: rgba(0, 0, 0, 0.8)
