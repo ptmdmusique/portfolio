@@ -14,17 +14,14 @@
   &::after
     transition: 0.1s
     font-size: 0
-    text-align: center
     opacity: 0
     content: "More Info"
   &:hover::after
     opacity: 1
-    @apply text-sm ml-2 
+    @apply text-sm ml-2
 
     @media screen and ( min-width: $media-md )
       @apply text-lg ml-4
-    @media screen and ( min-width: $media-lg )
-      @apply text-xl ml-4
     @media screen and ( min-width: $media-2k )
       @apply text-xl ml-4
     

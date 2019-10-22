@@ -21,16 +21,14 @@ const Header = (props) => {
   const HeaderButton = (props) => {
     const isActive = props.activeRoute === props.page;
     return (
-      <Link 
-        href={"/" + props.page}>
-        <a
-          className={buttonCN + (isActive ? activeCN : inactiveCN)}
-          disabled={isActive}
-          onClick={() => console.log("---Routing event: Going to " + props.name)}>
-          <i className={iconCN + props.iconName}></i>
-          <p className={textCN}>{props.name}</p>
-        </a>
-      </Link>
+      <a
+        href={"/" + props.page}
+        className={buttonCN + (isActive ? activeCN : inactiveCN)}
+        disabled={isActive}
+        onClick={() => console.log("---Routing event: Going to " + props.name)}>
+        <i className={iconCN + props.iconName}></i>
+        <p className={textCN}>{props.name}</p>
+      </a>
     )
   }
 
