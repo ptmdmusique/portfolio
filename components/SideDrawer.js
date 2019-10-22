@@ -18,16 +18,15 @@ const SideDrawer = (props) => {
     const isActive = props.activeRoute === data.page;
     return (
       <li key={data.page}>
-        <Link href={"/" + data.page}>
-          <button
-            className={buttonCN + (isActive ? activeButton : inactiveButton)}
-            disabled={isActive}>
-            <div className="w-16 h-16 flex justify-center content-center ">
-              <i className={iconCN + data.iconName}></i>
-            </div>
-            <p className={textCN}>{data.name}</p>
-          </button>
-        </Link>
+        <a
+          className={buttonCN + (isActive ? activeButton : inactiveButton)}
+          disabled={isActive}
+          href={"/" + data.page}>
+          <div className="w-16 h-16 flex justify-center content-center ">
+            <i className={iconCN + data.iconName}></i>
+          </div>
+          <p className={textCN}>{data.name}</p>
+        </a>
       </li>
     )
   }

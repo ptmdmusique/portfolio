@@ -1,6 +1,7 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import App from 'next/app';
+import 'assets/styles/GeneralStyle.sass';
 
 class MyApp extends App {
   // static async getInitialProps({ Component, ctx }) {
