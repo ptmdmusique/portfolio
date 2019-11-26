@@ -145,8 +145,6 @@ const AboutMe = () => {
     const achieveButtonCN = "flex items-center about-achievement-button " + fontSize;
 
     useEffect(() => {
-        
-
         const textEffectTime = 0.9;
         typeWriter("about-full-name", "\"Phan Thanh Minh Đức\"", textEffectTime );
         typeWriter("about-short-name", "\"Duc Phan\"", textEffectTime );

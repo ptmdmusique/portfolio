@@ -14,16 +14,16 @@ const RouteList = [
         name: "Projects and Works",
         iconName: "fas fa-project-diagram"
     },
-    {
-        page: "others",
-        name: "Others",
-        iconName: "fab fa-mix"
-    },
-    {
-        page: "secret",
-        name: "Secret",
-        iconName: "fas fa-user-secret"
-    },
+    // {
+    //     page: "others",
+    //     name: "Others",
+    //     iconName: "fab fa-mix"
+    // },
+    // {
+    //     page: "secret",
+    //     name: "Secret",
+    //     iconName: "fas fa-user-secret"
+    // },
 ]
 
 export default RouteList;

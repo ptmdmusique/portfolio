@@ -30,6 +30,7 @@
   display: flex
   justify-content: center
   flex-direction: column
+
   @media screen and ( min-width: $media-md )
     display: grid
     grid-template-columns: repeat(2, 1fr)
@@ -38,8 +39,19 @@
   @media screen and ( min-width: $media-xl )
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 1em
+    padding: 0% 5%
+  
+  @screen 2k
+    grid-gap: 3em
     padding: 0% 10%
+
+// @for $i from 1 to 100
+//   .project_past_card_#{$i}
+//     animation-delay: #{$i * 0.2}s
 
 .project_lightbox_card
   @apply w-screen h-screen
   background-color: rgba(0, 0, 0, 0.8)
+
+.project_lightbox_image
+  background-color: rgba(110, 110, 110, 0.1)  

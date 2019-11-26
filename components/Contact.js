@@ -65,7 +65,7 @@ const Contact = () => {
           border-radius: 30%;
 
           background: #f1f1f1;
-          box-shadow:-5px 5px 15px -5px #f1f1f1; 
+
           
           overflow: hidden;
           position: relative;

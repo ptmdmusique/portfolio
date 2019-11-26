@@ -6,13 +6,13 @@ import HoverAnimation from 'assets/animations/HoverAnimation';
 
 import "assets/styles/HeaderStyle.sass"
 
-const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl 2k:text-4xl "
+const fontSize = "sm:text-2xl text-xl lg:text-2xl md:text-2xl xl:text-3xl 2k:text-5xl "
 const buttonCN =
   "font-medium rounded inline-flex justify-center\
    items-center text-gray-100 relative focus:outline-none "
 const iconCN = "mr-6 text-center " + fontSize;
 const textCN = "text-center align-middle " + fontSize;
-const headerCN = "header-container h-16 md:h-24 lg:h-24 w-full fixed "
+const headerCN = "header-container h-16 md:h-24 lg:h-24 2k:h-48 w-full fixed "
 
 const activeCN = "text-green-300 header-active-button ";
 const inactiveCN = "hover:text-green-300 scale ";
