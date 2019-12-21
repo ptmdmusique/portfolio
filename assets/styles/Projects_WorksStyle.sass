@@ -1,7 +1,7 @@
 @import "~aos/dist/aos.css"
 @import "./GeneralStyle.sass"
 
-.project_intro
+.project-intro
   background-image: url('/static/images/light-bulb-min.jpg')
   background-repeat: none
   background-size: cover
@@ -9,7 +9,25 @@
   background-blend-mode: darken
   background-position: right
 
-.project_card_button
+  @apply flex items-center w-full h-screen px-8 
+  @screen md
+    @apply px-16
+  @screen lg
+    @apply px-24
+  @screen xl
+    @apply px-32
+  @screen 2k
+    @apply px-64
+
+.project-intro-text
+  @apply select-none text-white text-3xl
+  @screen md
+    @apply text-5xl
+  @screen lg
+    @apply text-6xl
+
+
+.project-card-button
   @apply text-sm
   &::after
     transition: 0.1s
@@ -25,33 +43,116 @@
     @media screen and ( min-width: $media-2k )
       @apply text-xl ml-4
     
-.project_lightbox_grid  
-  justify-items: center
-  display: flex
-  justify-content: center
-  flex-direction: column
+.project-lightbox-grid  
+  @apply flex justify-center content-center flex-col 
 
-  @media screen and ( min-width: $media-md )
+  @screen md
     display: grid
     grid-template-columns: repeat(2, 1fr)
     grid-gap: 1em
-
-  @media screen and ( min-width: $media-xl )
+  @screen xl
     grid-template-columns: repeat(3, 1fr)
     grid-gap: 1em
-    padding: 0% 5%
-  
+    padding: 0% 5%  
   @screen 2k
     grid-gap: 3em
     padding: 0% 10%
 
-// @for $i from 1 to 100
-//   .project_past_card_#{$i}
-//     animation-delay: #{$i * 0.2}s
+.project-content-div
+  @apply py-24 px-12
+  @screen md
+    @apply py-40
+  @screen lg
+    @apply py-56 px-16
+  @screen 2k
+    @apply px-64
 
-.project_lightbox_card
+.project-lightbox-card
   @apply w-screen h-screen
   background-color: rgba(0, 0, 0, 0.8)
 
-.project_lightbox_image
+.project-lightbox-image
   background-color: rgba(110, 110, 110, 0.1)  
+
+
+.project-div-title
+  @apply font-bold text-center text-2xl text-white mb-4
+
+  @screen md
+    @apply text-4xl mb-8
+  @screen lg
+    @apply mb-16
+  @screen xl
+    @apply text-5xl
+  @screen 2k
+    @apply text-6xl 
+
+
+
+
+
+
+//STAR EFFECTS STARTS
+  // n is number of stars required
+@function multiple-box-shadow ($n) 
+  $value: '#{random(2000)}px #{random(2000)}px #FFF'
+  @for $i from 2 through $n
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF'
+
+  @return unquote($value)
+
+$shadows-small:  multiple-box-shadow(700)
+$shadows-medium: multiple-box-shadow(200)
+$shadows-big:    multiple-box-shadow(100)
+
+.project-star-div
+  @apply min-h-screen
+  height: 100% 
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%)
+  overflow: hidden
+
+.project-star-1
+  width: 1px
+  height: 1px
+  background: transparent
+  box-shadow: $shadows-small
+  animation			: animStar 50s linear infinite
+    
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 1px
+    height: 1px
+    background: transparent
+    box-shadow: $shadows-small
+    
+.project-star-2
+  width: 2px
+  height: 2px
+  background: transparent
+  box-shadow: $shadows-medium
+  animation			: animStar 100s linear infinite
+    
+.project-star-3
+  width: 3px
+  height: 3px
+  background: transparent
+  box-shadow: $shadows-big
+  animation			: animStar 150s linear infinite
+    
+  &:after
+    content: " "
+    position: absolute
+    top: 2000px
+    width: 3px
+    height: 3px
+    background: transparent
+    box-shadow: $shadows-big
+
+@keyframes animStar
+  from	
+    transform: translateY(0px)
+  to		
+    transform: translateY(-2000px)
+//STAR ENDS

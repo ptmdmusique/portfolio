@@ -10,7 +10,7 @@ const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 import "assets/styles/Projects_WorksStyle.sass";
 
-const project_data = [
+const pastProjectData = [
   {
     title: "Chempedia",
     description: "Something Something",
@@ -79,17 +79,17 @@ const projects_works = () => {
     const animationCN = "animated fadeIn bounce project_past_card_" + (index);
     return (
       <div 
-        index={index} 
+        key={index} 
         className={"rounded overflow-hidden shadow-lg bg-gray-100 pb-4 mb-8 " + animationCN}
-        data-aos="zoom-in-up"
+        data-aos="zoom-in"
         // data-aos-offset="-1000"
         data-aos-delay={index * 100}
-        data-aos-duration="250"
-        data-aos-easing="ease-in-out"
+        data-aos-duration="500"
+        data-aos-easing="ease-out-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
         data-aos-anchor-placement="top-center"
-        data-aos-anchor=".project_lightbox_grid"
+        data-aos-anchor=".project-lightbox-grid"
         
         >
         <div className="w-full flex justify-center align-middle h-auto">
@@ -108,7 +108,7 @@ const projects_works = () => {
         </div>
 
         <div className="flex justify-center px-6 py-4 mt-1 md:mt-2 lg:mt-4">
-          <button className="flex items-center rounded-lg bg-green-600 px-2 text-sm md:text-lg lg:text-xl xl:text-xl 2k:text-2xl font-semibold text-white project_card_button focus:outline-none">
+          <button className="flex items-center rounded-lg bg-green-600 px-2 text-sm md:text-lg lg:text-xl xl:text-xl 2k:text-2xl font-semibold text-white project-card-button focus:outline-none">
             <i className="fas fa-info-circle py-2"></i>     
           </button>   
         </div>
@@ -116,9 +116,9 @@ const projects_works = () => {
     )
   }
 
-  const renderAllProject = () => {
+  const renderProjects = (projectList) => {
     const result = [];
-    project_data.forEach((ele, index) => {
+    projectList.forEach((ele, index) => {
       result.push(renderProjectCard(ele, index))
     })
 
@@ -137,9 +137,9 @@ const projects_works = () => {
     })
 
     return (
-      <div className="project_lightbox_card flex justify-center items-center px-40 py-48">
+      <div className="project-lightbox-card flex justify-center items-center px-40 py-48">
         <div className="w-full h-full flex justify-center align-middle">
-          <div className="project_lightbox_image w-6/12 flex justify-center align-middle">
+          <div className="project-lightbox-image w-6/12 flex justify-center align-middle">
             <AutoPlaySwipeableViews
                 interval={2000}
                 enableMouseEvents
@@ -147,10 +147,6 @@ const projects_works = () => {
               >
               {imageList}
             </AutoPlaySwipeableViews> 
-            {/* <img 
-              className="object-contain" 
-              src={content.images[3].src}
-              alt="Sunset in the mountains"/> */}
           </div>
 
           <div className="bg-yellow-400 w-4/12 flex justify-center py-32 px-16 ">
@@ -170,16 +166,22 @@ const projects_works = () => {
       <Contact />
 
       <div className="relative">
-        <div className="w-full h-screen flex items-center project_intro px-8 md:px-16 lg:px-24 xl:px-32 2k:px-64">
-          <h1 className={"font-Code text-white text-3xl md:text-5xl lg:text-6xl xl:text-6xl project_intro_text select-none "}>
+        <div className="project-intro">
+          <h1 className="font-Code project-intro-text">
             Past + Current <br/> Dedication
           </h1>
         </div>
 
-        <div className="min-h-screen py-24 md:py-40 lg:py-56 px-12 lg:px-16 2k:px-64 bg-gray-200">
-          <h1 className="font-bold text-center text-2xl md:text-4xl xl:text-5xl mb-4 md:mb-8 lg:mb-16 2k:text-6xl font-Code">Past Projects</h1>
-          <div className="project_lightbox_grid">
-            {renderAllProject()}
+        <div className="project-star-div">
+          <div className="project-star-1"/>
+          <div className="project-star-2"/>
+          <div className="project-star-3"/>
+
+          <div className="project-content-div">
+            <h1 className="font-Code project-div-title">Past Projects</h1>
+            <div className="project-lightbox-grid">
+              {renderProjects(pastProjectData)}
+            </div>
           </div>
         </div>
           
