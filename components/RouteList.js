@@ -7,7 +7,7 @@ const RouteList = [
     {
         page: "about",
         name: "About Me",
-        iconName: "fas fa-smile"
+        iconName: "fas fa-music"
     },
     {
         page: "projects_works",
