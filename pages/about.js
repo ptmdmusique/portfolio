@@ -17,31 +17,31 @@ const AchievementData = [
         date: "2013, 8th Grade",
         name: "Vietnamese Advanced Math",
         prize: "Third Prize",
-        description: "This Math contest required us to know advanced Geometry, advanced Algebra and advanced Number Theory. We were trained for around a year starting from the last term of 8th grade until the end of the year, including Summer. It was fun and very challenging!",
+        description: "This Math contest required us to know Advanced Geometry, Advanced Algebra, and Advanced Number Theory. We were trained for around a year starting from the last term of 8th grade until the end of the year, including Summer. It was fun and very challenging!",
     },
     {
         date: "2015, 11th Grade",
         name: "Vietnamese Creative Software",
         prize: "Third Prize",
-        description: "This contest required us to make and defend a small software that is helpful for our fellow students in a short period of time. Using C# for Window Phone (yes...), we made Chempedia which is a wikipedia for what we are taught in Chemistry Nguyễn Quốc Việt, my teammate, handled the heavy work, I tailor the rest and we won the third prize! Thanks Việt :D",
+        description: "This contest required us to make and defend a small software that is helpful for our fellow students in a short time. Using C# for Window Phone (yes...), we made Chempedia, which is a Wikipedia for what we are taught in Chemistry Nguyễn Quốc Việt, my teammate, handled the heavy work, I tailor the rest and we won the third prize! Thanks, Việt :D",
     },    
     {
         date: "2015, 11th Grade",
         name: "Vietnamese Young Programmer",
         prize: "Second Place, District Level",
-        description: "This programming contest is one of the annual contests that got held as a playground for many student competitor. We were required to understand basic algorithms such as sorting algos, searching algos, etc. I luckily got 2nd place!",
+        description: "This programming contest is one of the annual competitions that got held as a playground for many student competitors. We were required to understand basic algorithms such as sorting algos, searching algos, etc. I luckily got 2nd place!",
     },
     {
         date: "2015, 11th Grade",
         name: "Vietnamese Young Programmer",
         prize: "Third Prize, City Level (Team work!)",
-        description: "Unlike the other programming contest with the same name, this round's requirement is the same as Vietnamese Creative Software's. My teammate and me chose the one that we used that same program and we won :)",
+        description: "Unlike the other programming contest with the same name, this round's requirement is the same as Vietnamese Creative Software's. My teammate and I chose the one that we used that same program, and we won :)",
     },
     {
         date: "2016, 12th Grade",
         name: "Willamette Programming Contest",
         prize: "Fourth Place (Team work!)",
-        description: "This is (used to be?) one of the annual programming contests for highschool students. My team: Dylan, Parker and me represented Tigard High School for the competitive sections. My English when I first came to the U.S. was very bad back then so I couldn't communicate very well! But my teammates carried me to the win!",
+        description: "This is (used to be?) one of the annual programming contests for high school students. My team: Dylan, Parker, and me, represented Tigard High School for the competitive sections. My English when I first came to the U.S. was very bad back then so I couldn't communicate very well! But my teammates carried me to the win!",
     },
 ]
 

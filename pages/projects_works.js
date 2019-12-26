@@ -72,33 +72,71 @@ const pastProjectData = [
   },
 ]
 
+const currentProjectData = [
+  {
+    title: "Multiple Choice Platform",
+    description: "Something Something",
+    overview: "ReactJS + Firebase",
+    workYear: "2019",
+    collab: "Tạ Hoàng Giang - Giang Ta",
+    images: [
+      {
+        src: "static/images/secret.png"
+      },
+    ]
+  },
+  {
+    title: "Research Data Website",
+    description: "Something Something",
+    overview: "Python + Java EE",
+    workYear: "2019",
+    collab: "Ismail Kably",
+    images: [
+      {
+        src: "static/images/secret.png"
+      },
+    ]
+  },
+  {
+    title: "Machine Learning Integration",
+    description: "Something Something",
+    overview: "Python + NLTK",
+    workYear: "2019",
+    collab: "None",
+    images: [
+      {
+        src: "static/images/secret.png"
+      },
+    ]
+  },
+]
+
 const projects_works = () => {
   const fontSize = "text-base md:text-lg lg:text-xl xl:text-2xl 2k:text-4xl ";
 
-  const renderProjectCard = (content, index = 0) => {
-    const animationCN = "animated fadeIn bounce project_past_card_" + (index);
+  const renderProjectCard = (content, index, anchorID) => {
     return (
       <div 
         key={index} 
-        className={"rounded overflow-hidden shadow-lg bg-gray-100 pb-4 mb-8 " + animationCN}
+        className="project-card-container"
         data-aos="zoom-in"
         // data-aos-offset="-1000"
-        data-aos-delay={index * 100}
+        data-aos-delay={index * 200}
         data-aos-duration="500"
         data-aos-easing="ease-out-cubic"
         data-aos-mirror="true"
         data-aos-once="false"
         data-aos-anchor-placement="top-center"
-        data-aos-anchor=".project-lightbox-grid"
+        data-aos-anchor={`#${anchorID}`}
         
         >
-        <div className="w-full flex justify-center align-middle h-auto">
+        <div className="project-card-image">
           <img className="object-cover" src={content.images[0].src} alt="Sunset in the mountains"/>
         </div>
 
         <div className="px-6 py-4">
-          <div className="font-bold text-xl md:text-2xl lg:text-3xl">{content.title}</div>
-          <p className="text-gray-700 text-sm md:text-base lg:text-lg">
+          <div className="project-card-title">{content.title}</div>
+          <p className="project-card-content">
             Overview: {content.overview || "Chemistry + Wikipedia"}
             <br/>
             Work Year: {content.workYear || "1998"}
@@ -107,8 +145,8 @@ const projects_works = () => {
           </p>
         </div>
 
-        <div className="flex justify-center px-6 py-4 mt-1 md:mt-2 lg:mt-4">
-          <button className="flex items-center rounded-lg bg-green-600 px-2 text-sm md:text-lg lg:text-xl xl:text-xl 2k:text-2xl font-semibold text-white project-card-button focus:outline-none">
+        <div className="project-card-more-container">
+          <button className="project-card-more-button">
             <i className="fas fa-info-circle py-2"></i>     
           </button>   
         </div>
@@ -116,10 +154,10 @@ const projects_works = () => {
     )
   }
 
-  const renderProjects = (projectList) => {
+  const renderProjects = (projectList, anchorID) => {
     const result = [];
     projectList.forEach((ele, index) => {
-      result.push(renderProjectCard(ele, index))
+      result.push(renderProjectCard(ele, index, anchorID))
     })
 
     return result;
@@ -177,10 +215,17 @@ const projects_works = () => {
           <div className="project-star-2"/>
           <div className="project-star-3"/>
 
-          <div className="project-content-div">
+          <div className="project-content-div" id="project-past">
             <h1 className="font-Code project-div-title">Past Projects</h1>
             <div className="project-lightbox-grid">
-              {renderProjects(pastProjectData)}
+              {renderProjects(pastProjectData, "project-past")}
+            </div>
+          </div>
+
+          <div className="project-content-div" id="project-current">
+            <h1 className="font-Code project-div-title">Current Projects</h1>
+            <div className="project-lightbox-grid">
+              {renderProjects(currentProjectData, "project-current")}
             </div>
           </div>
         </div>

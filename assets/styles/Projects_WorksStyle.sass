@@ -26,22 +26,6 @@
   @screen lg
     @apply text-6xl
 
-
-.project-card-button
-  @apply text-sm
-  &::after
-    transition: 0.1s
-    font-size: 0
-    opacity: 0
-    content: "More Info"
-  &:hover::after
-    opacity: 1
-    @apply text-sm ml-2
-
-    @media screen and ( min-width: $media-md )
-      @apply text-lg ml-4
-    @media screen and ( min-width: $media-2k )
-      @apply text-xl ml-4
     
 .project-lightbox-grid  
   @apply flex justify-center content-center flex-col 
@@ -64,6 +48,8 @@
     @apply py-40
   @screen lg
     @apply py-56 px-16
+  @screen xl
+    @apply px-40
   @screen 2k
     @apply px-64
 
@@ -77,6 +63,7 @@
 
 .project-div-title
   @apply font-bold text-center text-2xl text-white mb-4
+  animation: float-no-shadow 3s ease-in-out infinite
 
   @screen md
     @apply text-4xl mb-8
@@ -88,22 +75,77 @@
     @apply text-6xl 
 
 
+.project-card-container
+  @apply rounded overflow-hidden shadow-lg bg-gray-100 pb-4 mb-8
 
+.project-card-image 
+  @apply w-full h-auto flex justify-center align-middle 
+
+.project-card-title
+  @apply font-bold text-xl
+
+  @screen md
+    @apply text-2xl
+  @screen 2k
+    @apply text-3xl
+
+.project-card-content
+  @apply text-gray-700 text-sm 
+  @screen md
+    @apply text-base
+  @screen lg
+    @apply text-lg
+  @screen 2k
+    @apply text-xl
+
+.project-card-more-container
+  @apply flex justify-center px-6 py-4 mt-1
+  @screen md
+    @apply mt-2
+  @screen lg
+    @apply mt-4
+
+.project-card-more-button  
+  @apply flex items-center rounded-lg bg-green-600 px-2 text-sm font-semibold text-white text-sm
+  animation: float 2.5s ease-in-out infinite
+  &:focus
+    @apply outline-none
+
+  &::after
+    transition: 0.1s
+    font-size: 0
+    opacity: 0
+    content: "More Info"
+  &:hover::after
+    opacity: 1
+    @apply text-sm ml-2
+
+    @media screen and ( min-width: $media-md )
+      @apply text-lg ml-4
+    @media screen and ( min-width: $media-2k )
+      @apply text-xl ml-4
+
+  @screen md
+    @apply text-lg
+  @screen lg
+    @apply text-xl
+  @screen 2k
+    @apply text-2xl 
 
 
 
 //STAR EFFECTS STARTS
   // n is number of stars required
 @function multiple-box-shadow ($n) 
-  $value: '#{random(4000)}px #{random(4000)}px #FFF'
+  $value: '#{random(8000)}px #{random(8000)}px #FFF'
   @for $i from 2 through $n
-    $value: '#{$value} , #{random(4000)}px #{random(4000)}px #FFF'
+    $value: '#{$value} , #{random(8000)}px #{random(8000)}px #FFF'
 
   @return unquote($value)
 
-$shadows-small:  multiple-box-shadow(1000)
-$shadows-medium: multiple-box-shadow(700)
-$shadows-big:    multiple-box-shadow(300)
+$shadows-small:  multiple-box-shadow(2000)
+$shadows-medium: multiple-box-shadow(1500)
+$shadows-big:    multiple-box-shadow(1000)
 
 .project-star-div
   @apply min-h-screen
@@ -144,7 +186,7 @@ $shadows-big:    multiple-box-shadow(300)
   &:after
     content: " "
     position: absolute
-    top: 2000px
+    top: 8000px
     width: 3px
     height: 3px
     background: transparent
@@ -154,5 +196,30 @@ $shadows-big:    multiple-box-shadow(300)
   from	
     transform: translateY(0px)
   to		
-    transform: translateY(-2000px)
+    transform: translateY(-8000px)
 //STAR ENDS
+
+
+
+@keyframes float 
+	0% 
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6)
+		transform: translatey(0px)
+	
+	50% 
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2)
+		transform: translatey(-10px)
+	
+	100% 
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6)
+		transform: translatey(0px)
+	
+@keyframes float-no-shadow
+	0% 
+		transform: translatey(0px)
+	
+	50% 
+		transform: translatey(-10px)
+	
+	100% 
+		transform: translatey(0px)
