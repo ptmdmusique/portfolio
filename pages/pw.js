@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PageHeader from 'components/PageHeader'
 import Header from 'components/Header';
 import Contact from 'components/Contact';
@@ -57,10 +57,10 @@ const pastProjectData = [
     ]
   },
   {
-    title: "WCT Tigard Mobile App",
+    title: "WCT Tigard App",
     description: [
       "Made for World Champion Taekwondo",
-      "#ReactNative #Firebase #Taekwondo"
+      "#ReactNative #Firebase #Taekwondo #Android #iOS" 
     ],
     overview: "React Native + Taekwondo",
     workYear: "2019",
@@ -142,6 +142,7 @@ const PW = () => {
     "index": -1,
     "type": "",
   })
+  const myRef = useRef(null)
 
   const renderProjectCard = (content, index, anchorID) => {
     return (
@@ -194,7 +195,7 @@ const PW = () => {
 
         <div className="project-card-more-container">
           <button 
-            className="project-card-more-button"
+            className={(showDesc.index !== index || showDesc.type !== anchorID) ?"project-card-more-button-show" : "project-card-more-button-hide"}
             onClick={() => {
               if (showDesc.index !== index || showDesc.type !== anchorID) {
                 setShowDesc({"index": index, "type": anchorID})
@@ -263,9 +264,20 @@ const PW = () => {
           <h1 className="font-Code project-intro-text">
             Past + Current <br/> Dedication
           </h1>
+          
+          <div className="project-intro-button-div">
+            <button 
+              className="project-intro-button"
+              onClick={() => {
+                // window.scrollTo(0, myRef.current.offsetTop) 
+                myRef.current.scrollIntoView({behavior: 'smooth'})
+              }}>
+              <i className="fas fa-chevron-down"></i>
+            </button>
+          </div>
         </div>
 
-        <div className="project-star-div">
+        <div className="project-star-div" ref={myRef} >
           <div className="project-star-1"/>
           <div className="project-star-2"/>
           <div className="project-star-3"/>

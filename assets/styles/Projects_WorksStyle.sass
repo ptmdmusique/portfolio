@@ -2,6 +2,8 @@
 @import "./GeneralStyle.sass"
 
 .project-intro
+  @apply relative flex items-center w-full h-screen px-8 z-30
+  
   background-image: url('/static/images/light-bulb-min.jpg')
   background-repeat: none
   background-size: cover
@@ -9,7 +11,6 @@
   background-blend-mode: darken
   background-position: right
 
-  @apply flex items-center w-full h-screen px-8 
   @screen md
     @apply px-16
   @screen lg
@@ -26,7 +27,39 @@
   @screen lg
     @apply text-6xl
 
-    
+.project-intro-button-div
+  @apply absolute flex w-full justify-center
+  bottom: 100px
+  left: 0
+
+  @screen md
+    bottom: 50px
+
+.project-intro-button
+  @apply text-gray-200 text-lg border-gray-200 border-2 rounded-full h-8 w-8
+  transition: all 0.1s ease-in
+
+  &:focus
+    @apply outline-none
+
+  &:hover
+    @apply text-green-400 border-green-400
+    text-shadow: 0px 0px 5px #42f59e
+    -moz-transition: all 0.2s ease-in
+    -o-transition: all 0.2s ease-in
+    -webkit-transition: all 0.2s ease-in
+
+  @screen md
+    @apply text-xl
+  @screen lg
+    @apply text-2xl w-10 h-10
+  @screen xl
+    @apply text-3xl w-12 h-12
+  @screen 2k
+    @apply text-4xl w-16 h-16 border-4
+  
+
+
 .project-lightbox-grid  
   @apply flex justify-center content-center flex-col 
 
@@ -77,6 +110,14 @@
 
 .project-card-container
   @apply rounded overflow-hidden shadow-lg bg-gray-100 pb-4 mb-8
+  min-height: 400px
+
+  @screen md
+    min-height: 500px
+  @screen xl
+    min-height: 550px
+  @screen 2k
+    min-height: 650px
 
 .project-card-image 
   @apply w-full h-auto flex justify-center align-middle 
@@ -104,7 +145,10 @@
     @apply mt-3
 
 .project-card-more-container
-  @apply flex justify-center px-6 py-4 mt-1
+  @apply absolute flex justify-center px-6 py-4 mt-1
+  top: 5px
+  left: 0
+
   @screen md
     @apply mt-2
   @screen lg
@@ -112,7 +156,9 @@
 
 .project-card-more-button  
   @apply flex items-center rounded-lg bg-green-600 px-2 text-sm font-semibold text-white text-sm
+  transition: all 0.5s
   animation: float 2.5s ease-in-out infinite
+
   &:focus
     @apply outline-none
 
@@ -120,14 +166,13 @@
     transition: 0.1s
     font-size: 0
     opacity: 0
-    content: "More Info"
   &:hover::after
     opacity: 1
     @apply text-sm ml-2
 
-    @media screen and ( min-width: $media-md )
+    @screen md
       @apply text-lg ml-4
-    @media screen and ( min-width: $media-2k )
+    @screen 2k
       @apply text-xl ml-4
 
   @screen md
@@ -136,6 +181,17 @@
     @apply text-xl
   @screen 2k
     @apply text-2xl 
+
+.project-card-more-button-show
+  @extend .project-card-more-button 
+  &::after
+    content: "More Info"
+
+.project-card-more-button-hide
+  @apply bg-blue-600
+  @extend .project-card-more-button 
+  &::after
+    content: "Less Info"
 
 
 
@@ -228,3 +284,10 @@ $shadows-big:    multiple-box-shadow(1000)
 	
 	100% 
 		transform: translatey(0px)
+
+
+@keyframes out-of-screen
+  0%
+    transform: translatey(0px)
+  100%
+    transform: translatey(-100vh)
