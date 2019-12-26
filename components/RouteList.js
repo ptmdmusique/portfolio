@@ -10,7 +10,7 @@ const RouteList = [
         iconName: "fas fa-music"
     },
     {
-        page: "projects_works",
+        page: "pw",
         name: "Projects and Works",
         iconName: "fas fa-project-diagram"
     },

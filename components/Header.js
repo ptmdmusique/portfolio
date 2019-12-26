@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link';
 import RouteList from 'components/RouteList';
 import SideDrawer from 'components/SideDrawer';
 import HoverAnimation from 'assets/animations/HoverAnimation';

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageHeader from 'components/PageHeader'
 import Header from 'components/Header';
 import Contact from 'components/Contact';
@@ -13,7 +13,11 @@ import "assets/styles/Projects_WorksStyle.sass";
 const pastProjectData = [
   {
     title: "Chempedia",
-    description: "Something Something",
+    description: [
+      "Creative Software Competition: 3rd place",
+      "Young Programmer Competition: 2nd place",
+      "#WindowsPhone #C# #Chemistry #FunStudyForStudents",
+    ],
     overview: "Chemistry + Wikipedia",
     workYear: "2014",
     collab: "Nguyễn Quốc Việt - Viet Nguyen",
@@ -25,7 +29,10 @@ const pastProjectData = [
   },
   {
     title: "When the Dream Ends",
-    description: "Something Something",
+    description: [
+      "Made for fun!",
+      "#Unity3D #C# #PixelArt #RPG"
+    ],
     overview: "Pixel Art + Unity 3D",
     workYear: "2017",
     images: [
@@ -36,7 +43,10 @@ const pastProjectData = [
   },
   {
     title: "Teddy Fighter XD",
-    description: "Something Something",
+    description: [
+      "Made for fun!",
+      "#Unity3D #C# #PixelArt #SpaceShooter"
+    ],
     overview: "Pixel Art + Unity 3D",
     workYear: "2018",
     collab: "Nguyễn Hữu Thắng - Thang Nguyen",
@@ -48,7 +58,10 @@ const pastProjectData = [
   },
   {
     title: "WCT Tigard Mobile App",
-    description: "Something Something",
+    description: [
+      "Made for World Champion Taekwondo",
+      "#ReactNative #Firebase #Taekwondo"
+    ],
     overview: "React Native + Taekwondo",
     workYear: "2019",
     collab: "Nguyễn Hữu Thắng - Thang Nguyen",
@@ -60,7 +73,10 @@ const pastProjectData = [
   },
   {
     title: "Duc's Portfolio",
-    description: "Something Something",
+    description: [
+      "Made to showoff self!",
+      "#ReactJS #NextJS #Photoshop #SASS"
+    ],
     overview: "ReactJS + NextJS",
     workYear: "2019",
     collab: "Nguyễn Hữu Thắng - Thang Nguyen",
@@ -75,7 +91,11 @@ const pastProjectData = [
 const currentProjectData = [
   {
     title: "Multiple Choice Platform",
-    description: "Something Something",
+    description: [
+      "Contribution for former Highschool as alumni.",
+      "Help teachers assign multiple choice homework for students",
+      "#ReactJS #Firebase #Alumni #TDN"
+    ],
     overview: "ReactJS + Firebase",
     workYear: "2019",
     collab: "Tạ Hoàng Giang - Giang Ta",
@@ -87,7 +107,10 @@ const currentProjectData = [
   },
   {
     title: "Research Data Website",
-    description: "Something Something",
+    description: [
+      "Power grid efficiency data analysis",
+      "#ArcGIS #JavaEE #Python #Graphs #Data"
+    ],
     overview: "Python + Java EE",
     workYear: "2019",
     collab: "Ismail Kably",
@@ -99,7 +122,10 @@ const currentProjectData = [
   },
   {
     title: "Machine Learning Integration",
-    description: "Something Something",
+    description: [
+      "Machine learning research and integration for app automation",
+      "#MachineLearning #SentimentAnalysis #NLTK"
+    ],
     overview: "Python + NLTK",
     workYear: "2019",
     collab: "None",
@@ -111,8 +137,11 @@ const currentProjectData = [
   },
 ]
 
-const projects_works = () => {
-  const fontSize = "text-base md:text-lg lg:text-xl xl:text-2xl 2k:text-4xl ";
+const PW = () => {
+  const [showDesc, setShowDesc] = useState({
+    "index": -1,
+    "type": "",
+  })
 
   const renderProjectCard = (content, index, anchorID) => {
     return (
@@ -134,19 +163,45 @@ const projects_works = () => {
           <img className="object-cover" src={content.images[0].src} alt="Sunset in the mountains"/>
         </div>
 
-        <div className="px-6 py-4">
-          <div className="project-card-title">{content.title}</div>
-          <p className="project-card-content">
-            Overview: {content.overview || "Chemistry + Wikipedia"}
-            <br/>
-            Work Year: {content.workYear || "1998"}
-            <br/>
-            Collaborator: {content.collab || "None"}
-          </p>
-        </div>
+        {
+          (showDesc.index !== index || showDesc.type !== anchorID) ?
+          <div className="px-6 py-4">
+            <div className="project-card-title">{content.title}</div>
+            <p className="project-card-content">
+              <b>Overview:</b> {content.overview || "Chemistry + Wikipedia"}
+              <br/>
+              <b>Work Year:</b> {content.workYear || "1998"}
+              <br/>
+              <b>Collaborator:</b> {content.collab || "None"}
+            </p>
+          </div> :
+            <div className="px-6 py-4">
+            <div className="project-card-title">{content.title}</div>
+            <div
+              className="project-card-content">
+              {content.description.map( 
+                (ele, index) => 
+                  <p 
+                    key={index}
+                    className="project-description-content">
+                      {`${ele}`}
+                  </p>
+                )
+              }
+            </div>
+          </div>
+        }
 
         <div className="project-card-more-container">
-          <button className="project-card-more-button">
+          <button 
+            className="project-card-more-button"
+            onClick={() => {
+              if (showDesc.index !== index || showDesc.type !== anchorID) {
+                setShowDesc({"index": index, "type": anchorID})
+              } else {
+                setShowDesc({"index": -1, "type": ""})
+              }
+            }}>
             <i className="fas fa-info-circle py-2"></i>     
           </button>   
         </div>
@@ -188,7 +243,7 @@ const projects_works = () => {
           </div>
 
           <div className="bg-yellow-400 w-4/12 flex justify-center py-32 px-16 ">
-            <h1 className={fontSize + " "}>
+            <h1 className="text-base md:text-lg lg:text-xl xl:text-2xl 2k:text-4xl ">
               {content.title}
             </h1>
           </div>
@@ -200,7 +255,7 @@ const projects_works = () => {
   return (
     <div className="w-full">
       <PageHeader pageTitle="About Duc Duchy" />
-      <Header activeRoute={"projects_works"} />
+      <Header activeRoute={"pw"} />
       <Contact />
 
       <div className="relative">
@@ -239,4 +294,4 @@ const projects_works = () => {
   )
 }
 
-export default projects_works
+export default PW

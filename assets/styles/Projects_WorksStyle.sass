@@ -82,7 +82,7 @@
   @apply w-full h-auto flex justify-center align-middle 
 
 .project-card-title
-  @apply font-bold text-xl
+  @apply font-bold text-xl text-gray-900 mb-1
 
   @screen md
     @apply text-2xl
@@ -90,13 +90,18 @@
     @apply text-3xl
 
 .project-card-content
-  @apply text-gray-700 text-sm 
+  @apply text-gray-600 text-sm 
   @screen md
     @apply text-base
   @screen lg
     @apply text-lg
   @screen 2k
     @apply text-xl
+
+.project-description-content
+  @apply leading-tight mt-1
+  @screen lg
+    @apply mt-3
 
 .project-card-more-container
   @apply flex justify-center px-6 py-4 mt-1
