@@ -2,14 +2,25 @@
 @import "./GeneralStyle.sass"
 
 .project-intro
-  @apply relative flex items-center w-full h-screen px-8 z-30
-  
+  @apply relative flex items-center w-full h-screen 
   background-image: url('/static/images/light-bulb-min.jpg')
   background-repeat: none
   background-size: cover
-  background-color: rgba(0, 0, 0, 0.8)
-  background-blend-mode: darken
-  background-position: right
+  z-index: 0
+  
+  &::before
+    @apply w-screen h-screen absolute
+    content: ''
+    background-color: rgba(0, 0, 0, 1)
+    opacity: 0.9
+    z-index: 9
+
+.project-intro-text
+  @apply select-none text-white text-3xl z-10 px-8
+  @screen md
+    @apply text-5xl
+  @screen lg
+    @apply text-6xl
 
   @screen md
     @apply px-16
@@ -20,24 +31,16 @@
   @screen 2k
     @apply px-64
 
-.project-intro-text
-  @apply select-none text-white text-3xl
-  @screen md
-    @apply text-5xl
-  @screen lg
-    @apply text-6xl
-
 .project-intro-button-div
-  @apply absolute flex w-full 
-  bottom: 20px
-  left: 20px
+  @apply absolute flex w-full justify-center
+  bottom: 25%
+  left: 0
 
   @screen md
-    @apply justify-center
     bottom: 50px
 
 .project-intro-button
-  @apply text-gray-200 text-lg border-gray-200 border-2 rounded-full h-8 w-8
+  @apply text-gray-200 text-lg border-gray-200 border-2 rounded-full h-8 w-8 z-10
   transition: all 0.1s ease-in
 
   &:focus
@@ -122,6 +125,8 @@
 
 .project-card-image 
   @apply w-full h-auto flex justify-center align-middle 
+  &:hover
+    @apply cursor-pointer
 
 .project-card-title
   @apply font-bold text-xl text-gray-900 mb-1

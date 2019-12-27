@@ -160,8 +160,17 @@ const PW = () => {
         data-aos-anchor={`#${anchorID}`}
         
         >
-        <div className="project-card-image">
-          <img className="object-cover" src={content.images[0].src} alt="Sunset in the mountains"/>
+        <div 
+          className="project-card-image"
+          onClick={() => {
+            if (showDesc.index !== index || showDesc.type !== anchorID) {
+              setShowDesc({"index": index, "type": anchorID})
+            } else {
+              setShowDesc({"index": -1, "type": ""})
+            }
+          }}>
+          <img 
+            className="object-cover" src={content.images[0].src} alt="Sunset in the mountains"/>
         </div>
 
         {

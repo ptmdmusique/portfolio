@@ -1,8 +1,10 @@
+@import "./GeneralStyle.sass"
+
 $nearBG: url('/static/images/near-forest-bg.png')
 $middleBG: url('/static/images/middle-forest-bg.png')
 $farBG: url('/static/images/far-forest-bg.png')
-    
-.character-container
+
+.home-character-container
     height: 30%
     width: 100%
     position: fixed
@@ -12,20 +14,20 @@ $farBG: url('/static/images/far-forest-bg.png')
     align-items: flex-end
     overflow: visible
 
-.pixel-object
+.home-pixel-object
     image-rendering: -moz-crisp-edges
     image-rendering: -webkit-crisp-edges
     image-rendering: pixelated
     image-rendering: crisp-edges
 
-.hello-sign
+.home-hello-sign
     z-index: 14
     bottom: 50px
     left: -80px
     position: absolute
     animation: slide_2 15s linear infinite
 
-.ninja-run
+.home-ninja-run
     z-index: 15
     bottom: 0
     left: -100px
@@ -35,7 +37,7 @@ $farBG: url('/static/images/far-forest-bg.png')
     height: 100px
     animation: slide_2 15s linear infinite
 
-.hound-walk
+.home-hound-walk
     z-index: 14
     bottom: 0
     left: -300px
@@ -46,7 +48,7 @@ $farBG: url('/static/images/far-forest-bg.png')
 
     animation: slide_2 30s linear infinite
 
-.bat-fly
+.home-bat-fly
     z-index: 14
     bottom: 100px
     right: -50px
@@ -57,45 +59,56 @@ $farBG: url('/static/images/far-forest-bg.png')
 
     animation: slide_3 10s linear infinite
 
-.bg-container
+.home-bg-container
     height: 30%
     width: 2000%
     position: fixed
     left: 0
     bottom: 0
 
-.common-bg-style
+.home-common-bg-style
     height: 100%
 
-.near-bg
+.home-near-bg
     background: $nearBG repeat-x left bottom
     animation: 20s linear infinite slide
     z-index: 12
 
-.middle-bg
+.home-middle-bg
     background: $middleBG repeat-x left bottom
-    animation: 34s linear infinite slide 
+    animation: 34s linear infinite slide
     z-index: 11
 
-.far-bg
+.home-far-bg
     background: $farBG repeat-x left bottom
     animation: 50s linear infinite slide
     z-index: 10
 
+.home-swipe-text
+    @apply text-center my-4 text-gray-100 text-2xl z-40
+    @screen md
+      @apply text-3xl
+    @screen lg
+      @apply text-4xl
+    @screen 2k
+      @apply text-6xl
+
+
+    
 @keyframes slide
-    0% 
+    0%
         transform: translateX(0vw)
-    100% 
+    100%
         transform: translateX(-512px)
 
 @keyframes slide_2
-    0% 
+    0%
         transform: translateX(0vw)
-    100% 
+    100%
         transform: translateX(100vw)
 
 @keyframes slide_3
-    0% 
+    0%
         transform: translateX(0vw)
-    100% 
+    100%
         transform: translateX(-100vw)

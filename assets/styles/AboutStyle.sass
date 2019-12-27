@@ -2,66 +2,64 @@
 @import "./GeneralStyle.sass"
 
 .about-section-general
-  width: 100%
+  @apply w-screen relative flex
+  min-height: 100vh
+  background-position: right
+  background-repeat: none
+  background-size: cover
+  z-index: 0
+  &::before
+    @apply w-full h-full absolute
+    content: ""
+    background-color: rgba(0, 0, 0, 1)
+    opacity: 0.9
+    z-index: 0
 
 .about-section-1
   @extend .about-section-general
-  background-color: rgba(0, 0, 0, 0.9)
-  background-blend-mode: darken
-  background-position: right
   background-image: url('/static/images/code_background.jpg')
-  background-repeat: none
-  background-size: cover
 
 .about-section-2
   @extend .about-section-general
-  background-color: rgba(0, 0, 0, 0.9)
-  background-blend-mode: darken
-  background-position: right
   background-image: url('/static/images/homePicture-min.jpeg')
-  background-repeat: none
-  background-size: cover
 
 .about-section-3
   @extend .about-section-general
-  background-color: rgba(0, 0, 0, 0.9)
-  background-blend-mode: darken
-  background-position: right
   background-image: url('/static/images/lasan.jpg')
-  background-repeat: none
-  background-size: cover
 
 .about-section-cover
-  pointer-events: none
-  background-color: rgba(0, 0, 0, 0.7)
-  z-index: 10
-  position: absolute
-  top: 0
-  left: 0
-  width: 100%
-  height: 100%
+  @apply w-screen h-full top-0 left-0 absolute pointer-events-none
+  z-index: 100
+  &::before
+    @apply w-full h-full absolute
+    content: ""
+    background-color: rgba(0, 0, 0, 1)
+    opacity: 0.9
+    z-index: 0
 
 .about-achievement-bracket
   @media screen and ( max-width: $media-md )
     margin-left: 8px
+
   &::before
     content: "["
     margin-left: -15px
-    @media screen and ( min-width: $media-md )
+    @screen md
       margin-left: -20px
-    @media screen and ( min-width: $media-lg )
+    @screen lg
       margin-left: -25px
-    @media screen and ( min-width: $media-xl )
+    @screen xl
       margin-left: -30px
   &::after
     content: "]"
     margin-left: 10px
-    @media screen and ( min-width: $media-md )
+    @screen md
       margin-left: 10px
-    @media screen and ( min-width: $media-lg )
+    @screen lg
       margin-left: 13px
-    @media screen and ( min-width: $media-xl )
+    @screen xl
       margin-left: 17px
+      
   &::after, &::before
     color: #16a085
 
@@ -69,4 +67,6 @@
   transition: .2s ease-in-out
   &:hover
     transform: scale(1.1)
+  &:focus
+    @apply outline-none
     

@@ -135,14 +135,14 @@ const AboutMe = () => {
 
     const infoSectionCN = "mb-2"
     const buttonCN = "bg-transparent hover:bg-blue-500 text-teal-300 font-semibold hover:text-white py-2 px-4\
-        border border-teal-300 hover:border-transparent rounded " + fontSize;
+        border border-teal-300 hover:border-transparent rounded select-none " + fontSize;
 
     const achievementCommonCN = "text-white " + fontSize;
     const achievementBracketCN = "font-Code about-achievement-bracket md:inline ml-4 " + achievementCommonCN;
     const achievementContentCN = achievementCommonCN + "ml-4 pl-4 pr-4 ";
+    const achieveButtonCN = "flex items-center about-achievement-button " + fontSize;
 
     const [achievementIndex, setAchievementIndex] = useState(0);
-    const achieveButtonCN = "flex items-center about-achievement-button " + fontSize;
 
     useEffect(() => {
         const textEffectTime = 0.9;
@@ -287,35 +287,37 @@ const AboutMe = () => {
                 </div>
             </AboutSection>
 
-            <AboutSection className={"about-section-2 pt-12 md:pt-32 h-screen " + commonCN} data-aos={animCN}>
-                <h1 className={headTextCN}>Achievement</h1>    
-                <span className={infoSectionCN}>
-                    <p className={paragraphCN}>I got "beaten" by knowledge </p>            
-                    <p className={paragraphCN}>... but also rewarded at the same time! </p>
-                    <p className={paragraphCN}>Here are some of my achievement: </p>
-                </span>
+            <AboutSection className={"about-section-2 h-screen " + commonCN} data-aos={animCN}>
+                <div className="pt-12 md:pt-32">
+                    <h1 className={headTextCN}>Achievement</h1>    
+                    <span className={infoSectionCN}>
+                        <p className={paragraphCN}>I got "beaten" by knowledge </p>            
+                        <p className={paragraphCN}>... but also rewarded at the same time! </p>
+                        <p className={paragraphCN}>Here are some of my achievement: </p>
+                    </span>
 
-                <span className="flex mt-4 md:mt-6 lg:mt-10 mb-8 lg:mb-10 justify-around text-white">
-                    <button 
-                        className={achieveButtonCN}
-                        onClick={() => setAchievementIndex(achievementIndex == 0 ? AchievementData.length - 1 : (achievementIndex - 1))}>
-                        <i className="fas fa-chevron-circle-left"></i>
-                        <p className="ml-2 lg:ml-4">Previous</p>
-                    </button>
+                    <span className="flex mt-4 md:mt-6 lg:mt-10 mb-8 lg:mb-10 justify-around text-white">
+                        <button 
+                            className={achieveButtonCN}
+                            onClick={() => setAchievementIndex(achievementIndex == 0 ? AchievementData.length - 1 : (achievementIndex - 1))}>
+                            <i className="fas fa-chevron-circle-left"></i>
+                            <p className="ml-2 lg:ml-4">Previous</p>
+                        </button>
 
-                    <button 
-                        className={achieveButtonCN}
-                        onClick={() => setAchievementIndex((achievementIndex + 1) % AchievementData.length)}>
-                        <p className="mr-2 lg:mr-4">Next</p>
-                        <i className="fas fa-chevron-circle-right"></i>
-                    </button>
-                </span>
+                        <button 
+                            className={achieveButtonCN}
+                            onClick={() => setAchievementIndex((achievementIndex + 1) % AchievementData.length)}>
+                            <p className="mr-2 lg:mr-4">Next</p>
+                            <i className="fas fa-chevron-circle-right"></i>
+                        </button>
+                    </span>
+                </div>
 
                 {renderAchievementList()}
             </AboutSection>
 
-            <AboutSection className={"about-section-3 pt-12 md:pt-32 " + commonCN} data-aos={animCN}>
-                <div className="w-full h-auto flex flex-col pb-12 2k:pb-24 overflow-hidden">
+            <AboutSection className={"about-section-3 " + commonCN} data-aos={animCN}>
+                <div className="w-full h-auto flex flex-col pt-12 md:pt-32 pb-12 2k:pb-24 overflow-hidden">
                     <h1 className={headTextCN + " text-center mb-8 md:mb-16 2k:mb-24"}>Education</h1>    
                     {renderEducationList()}
                 </div>

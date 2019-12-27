@@ -1,0 +1,39 @@
+@import "./GeneralStyle.sass"
+
+.section-container 
+  // @apply w-auto h-screen relative flex justify-center items-center
+  @apply overflow-hidden w-auto h-screen relative flex justify-center items-center
+
+.section-background-image
+  @apply absolute top-0 left-0
+  background-image: url('/static/images/pixel-bg.png')
+  background-size: auto 100%
+  background-repeat: repeat-x
+
+  z-index: -10
+  
+  width: 600vw
+  height: 100vh
+  
+  image-rendering: -moz-crisp-edges
+  image-rendering: -webkit-crisp-edges
+  image-rendering: pixelated
+  image-rendering: crisp-edges
+  
+  animation: section-slide-out-of-screen 60s linear infinite
+    
+
+.section-background-overlay
+  @apply absolute h-screen w-screen
+  background-position: center
+  background-color: rgba(0,0,0,0.75)
+  opacity: 0.8
+
+@keyframes section-slide-out-of-screen 
+  0%
+    transform: translate3d(0, 0, 0)
+  100%
+    transform: translate3d(100vh * 507 / 267 * -1, 0, 0)
+    // transform: translate3d(1000000px, 0, 0)
+    // transform: translate3d(-300vh, 0, 0)
+    // transform: translate3d(-1521, 0, 0)
